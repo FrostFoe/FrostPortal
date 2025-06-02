@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -26,12 +27,12 @@ export default function ProfilePage() {
     <Sheet>
       {" "}
       {/* Sheet for mobile LeftMenu */}
-      <div className="flex flex-col min-h-screen bg-twitter-background">
+      <div className="flex flex-col min-h-screen">
         <ProfileTopBar title={userProfile.name} />
 
         <main className="flex-grow overflow-y-auto pb-16">
           {userProfile.headerImageUrl && (
-            <div className="h-40 sm:h-48 bg-slate-300">
+            <div className="h-40 sm:h-48">
               <Image
                 src={userProfile.headerImageUrl}
                 alt="Profile header"
@@ -47,7 +48,7 @@ export default function ProfilePage() {
           <div className="p-4">
             <div className="flex justify-between items-start mb-3">
               <Avatar
-                className={`h-20 w-20 border-4 border-twitter-background ${userProfile.headerImageUrl ? "-mt-12" : "mt-2"}`}
+                className={`h-20 w-20 border-4 border-transparent ${userProfile.headerImageUrl ? "-mt-12" : "mt-2"}`}
               >
                 <AvatarImage
                   src={userProfile.avatarUrl}
@@ -60,7 +61,7 @@ export default function ProfilePage() {
               </Avatar>
               <Button
                 variant="outline"
-                className="rounded-full px-4 py-1.5 text-sm font-bold border-twitter-primary text-twitter-primary hover:bg-twitter-primary/10"
+                className="rounded-full px-4 py-1.5 text-sm font-bold border-twitter-primary text-twitter-primary hover:opacity-90"
               >
                 Edit profile
               </Button>
@@ -121,7 +122,7 @@ export default function ProfilePage() {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`flex-1 py-3 text-center text-sm relative focus:outline-none
-                  ${activeTab === tab ? "text-twitter-primary font-semibold" : "text-twitter-text-secondary hover:bg-twitter-primary/5"}`}
+                  ${activeTab === tab ? "text-twitter-primary font-semibold" : "text-twitter-text-secondary hover:opacity-80"}`}
               >
                 {tab}
                 {activeTab === tab && (
@@ -146,7 +147,7 @@ export default function ProfilePage() {
         {/* FAB hidden on medium screens and up */}
         <Link href="/compose/tweet" passHref>
           <Button
-            className="fixed bottom-20 right-4 h-14 w-14 rounded-full bg-twitter-primary text-white shadow-[0px_2px_6px_rgba(0,0,0,0.2)] hover:bg-twitter-primary/90 z-50 md:hidden"
+            className="fixed bottom-20 right-4 h-14 w-14 rounded-full text-white shadow-[0px_2px_6px_rgba(0,0,0,0.2)] hover:opacity-90 z-50 md:hidden"
             size="icon"
             aria-label="Compose Tweet"
           >
@@ -156,7 +157,7 @@ export default function ProfilePage() {
       </div>
       <SheetContent
         side="left"
-        className="p-0 w-[280px] bg-twitter-background border-r-0 shadow-xl md:hidden"
+        className="p-0 w-[280px] border-r-0 shadow-xl md:hidden"
       >
         <LeftMenu inSheetContext={true} />
       </SheetContent>

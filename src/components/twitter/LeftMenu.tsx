@@ -54,12 +54,24 @@ interface LeftMenuProps {
 export function LeftMenu({ inSheetContext = false }: LeftMenuProps) {
   const { theme, toggleTheme } = useTheme();
 
+  const MenuItemContent = ({ item }: { item: typeof mainMenuItems[0] }) => (
+    <Link href={item.href} passHref>
+      <Button
+        variant="ghost"
+        className="w-full justify-start h-[55px] text-lg px-4 text-twitter-text-primary rounded-full"
+      >
+        <item.icon size={26} className="mr-4" />
+        <span className="font-medium">{item.label}</span>
+      </Button>
+    </Link>
+  );
+
   return (
-    <div className="flex flex-col h-full bg-twitter-background text-twitter-text-primary font-system">
+    <div className="flex flex-col h-full text-twitter-text-primary font-system">
       {/* Logo for desktop */}
       <div className="p-3 hidden md:block">
         <Link href="/" passHref>
-          <Button variant="ghost" size="icon" className="h-12 w-12 hover:bg-twitter-primary/10 rounded-full">
+          <Button variant="ghost" size="icon" className="h-12 w-12 rounded-full">
             <Bird size={30} className="text-twitter-primary" />
           </Button>
         </Link>
@@ -102,32 +114,20 @@ export function LeftMenu({ inSheetContext = false }: LeftMenuProps) {
 
       <nav className="flex-grow py-2">
         {mainMenuItems.map((item) => {
-          const linkContent = (
-            <Link href={item.href} passHref>
-              <Button
-                variant="ghost"
-                className="w-full justify-start h-[55px] text-lg px-4 text-twitter-text-primary hover:bg-twitter-primary/10 rounded-full"
-              >
-                <item.icon size={26} className="mr-4" />
-                <span className="font-medium">{item.label}</span>
-              </Button>
-            </Link>
-          );
-
           if (inSheetContext) {
             return (
               <SheetClose asChild key={item.label}>
-                {linkContent}
+                <MenuItemContent item={item} />
               </SheetClose>
             );
           }
-          return <div key={item.label}>{linkContent}</div>;
+          return <MenuItemContent key={item.label} item={item} />;
         })}
 
         {!inSheetContext && (
           <div className="px-3 mt-4 hidden md:block">
             <Link href="/compose/tweet" passHref>
-              <Button className="bg-twitter-primary text-white rounded-full h-12 w-full font-bold text-lg hover:bg-twitter-primary/90">
+              <Button className="text-white rounded-full h-12 w-full font-bold text-lg">
                 <Feather size={20} className="mr-2 hidden" /> {/* Icon mostly for mobile consistency, can hide on desktop text button */}
                 <span>Tweet</span>
               </Button>
@@ -139,7 +139,7 @@ export function LeftMenu({ inSheetContext = false }: LeftMenuProps) {
       {/* User account popover for desktop - placed at the bottom */}
       {!inSheetContext && (
         <div className="mt-auto p-3 border-t border-twitter-divider">
-           <Button variant="ghost" className="w-full justify-start h-16 text-left p-2 hover:bg-twitter-primary/10 rounded-full">
+           <Button variant="ghost" className="w-full justify-start h-16 text-left p-2 rounded-full">
             <Avatar className="h-10 w-10 mr-3">
                 <AvatarImage
                     src={currentUser.avatarUrl}
@@ -167,7 +167,7 @@ export function LeftMenu({ inSheetContext = false }: LeftMenuProps) {
               <Link href={item.href}>
                 <Button
                   variant="ghost"
-                  className="w-full justify-start h-[55px] text-16px px-4 text-twitter-text-primary hover:bg-twitter-primary/10"
+                  className="w-full justify-start h-[55px] text-16px px-4 text-twitter-text-primary"
                 >
                   <item.icon size={24} className="mr-4" />
                   {item.label}
@@ -196,15 +196,13 @@ export function LeftMenu({ inSheetContext = false }: LeftMenuProps) {
       )}
 
       {/* Desktop Fixed Sidebar Footer - Settings and Help are now part of main nav or could be in a "More" popover */}
-      {/* This specific footer section can be removed if Settings/Help are integrated above or in a popover */}
-      {/* For now, let's keep it if they are not in mainDesktopMenuItems */}
        {!inSheetContext && !mainMenuItems.find(item => item.href === "/settings") && (
         <div className={`mt-auto p-3 ${inSheetContext ? "" : "border-t border-twitter-divider"}`}>
           {bottomMenuItems.map(item => (
              <Link href={item.href} passHref key={item.label}>
                 <Button
                 variant="ghost"
-                className="w-full justify-start h-[55px] text-16px px-4 text-twitter-text-primary hover:bg-twitter-primary/10"
+                className="w-full justify-start h-[55px] text-16px px-4 text-twitter-text-primary"
                 >
                 <item.icon size={24} className="mr-4" /> {item.label}
                 </Button>
@@ -213,10 +211,9 @@ export function LeftMenu({ inSheetContext = false }: LeftMenuProps) {
           {/* Desktop theme toggle could go here or in a user popover */}
             <Button
               variant="ghost"
-              size="icon"
               onClick={toggleTheme}
               aria-label="Toggle theme"
-              className="w-full justify-start h-[55px] text-16px px-4 text-twitter-text-primary hover:bg-twitter-primary/10"
+              className="w-full justify-start h-[55px] text-16px px-4 text-twitter-text-primary"
             >
               {theme === "dark" ? (
                 <Sun size={24} className="mr-4" />
@@ -230,4 +227,3 @@ export function LeftMenu({ inSheetContext = false }: LeftMenuProps) {
     </div>
   );
 }
-

@@ -1,3 +1,4 @@
+
 "use client";
 import Link from "next/link";
 
@@ -14,7 +15,7 @@ export default function SearchPage() {
     <Sheet>
       {" "}
       {/* Sheet for mobile LeftMenu */}
-      <div className="flex flex-col min-h-screen bg-twitter-background">
+      <div className="flex flex-col min-h-screen">
         {/* Hide TopBar on desktop if RightSidebar provides search */}
         <div className="md:hidden">
           <TopBar
@@ -31,7 +32,7 @@ export default function SearchPage() {
             <Input
               type="search"
               placeholder="Search Twitter"
-              className="pl-10 pr-10 h-10 rounded-full bg-twitter-input-bg border-transparent focus:bg-white focus:border-twitter-primary focus:ring-twitter-primary placeholder-twitter-icon-gray text-sm"
+              className="pl-10 pr-10 h-10 rounded-full border-transparent focus:border-twitter-primary focus:ring-twitter-primary placeholder-twitter-icon-gray text-sm"
             />
             <Settings className="absolute right-3 h-5 w-5 text-twitter-icon-gray" />
           </div>
@@ -47,7 +48,7 @@ export default function SearchPage() {
             see trends for other areas.
           </p>
           <Button
-            className="bg-twitter-primary hover:bg-twitter-primary/90 text-white font-bold text-base rounded-full px-6 py-2 h-auto"
+            className="text-white font-bold text-base rounded-full px-6 py-2 h-auto hover:opacity-90"
             onClick={() => console.log("Change location clicked")}
           >
             Change location
@@ -58,7 +59,7 @@ export default function SearchPage() {
         <Link href="/compose/tweet" passHref className="md:hidden">
           <Button
             asChild
-            className="fixed bottom-20 right-4 h-14 w-14 rounded-full bg-twitter-primary text-white shadow-[0px_2px_6px_rgba(0,0,0,0.2)] hover:bg-twitter-primary/90 z-50"
+            className="fixed bottom-20 right-4 h-14 w-14 rounded-full text-white shadow-[0px_2px_6px_rgba(0,0,0,0.2)] hover:opacity-90 z-50"
             size="icon"
             aria-label="Compose Action"
           >
@@ -70,7 +71,7 @@ export default function SearchPage() {
       </div>
       <SheetContent
         side="left"
-        className="p-0 w-[280px] bg-twitter-background border-r-0 shadow-xl md:hidden"
+        className="p-0 w-[280px] border-r-0 shadow-xl md:hidden"
       >
         <LeftMenu inSheetContext={true} />
       </SheetContent>

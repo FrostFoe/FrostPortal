@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -13,7 +14,7 @@ export default function SpacesPage() {
     <Sheet>
       {" "}
       {/* Sheet for mobile LeftMenu */}
-      <div className="flex flex-col min-h-screen bg-twitter-background">
+      <div className="flex flex-col min-h-screen">
         <TopBar title="Spaces" />
         <main className="flex-grow overflow-y-auto p-4 pb-16 text-twitter-text-primary flex flex-col items-center justify-center">
           <h1 className="text-2xl font-bold mb-4">Spaces</h1>
@@ -29,7 +30,7 @@ export default function SpacesPage() {
               data-ai-hint="audio wave"
             />
           </div>
-          <Button className="bg-twitter-primary hover:bg-twitter-primary/90 text-white font-bold rounded-full px-6">
+          <Button className="text-white font-bold rounded-full px-6 hover:opacity-90">
             Explore Spaces
           </Button>
         </main>
@@ -37,7 +38,7 @@ export default function SpacesPage() {
         <Link href="/compose/tweet" passHref className="md:hidden">
           <Button
             asChild
-            className="fixed bottom-20 right-4 h-14 w-14 rounded-full bg-twitter-primary text-white shadow-[0px_2px_6px_rgba(0,0,0,0.2)] hover:bg-twitter-primary/90 z-50"
+            className="fixed bottom-20 right-4 h-14 w-14 rounded-full text-white shadow-[0px_2px_6px_rgba(0,0,0,0.2)] hover:opacity-90 z-50"
             size="icon"
             aria-label="Start a Space"
           >
@@ -48,7 +49,7 @@ export default function SpacesPage() {
       </div>
       <SheetContent
         side="left"
-        className="p-0 w-[280px] bg-twitter-background border-r-0 shadow-xl md:hidden"
+        className="p-0 w-[280px] border-r-0 shadow-xl md:hidden"
       >
         <LeftMenu inSheetContext={true} />
       </SheetContent>

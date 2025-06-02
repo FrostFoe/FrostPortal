@@ -1,3 +1,4 @@
+
 "use client";
 import Link from "next/link";
 import { Home, Search, Bell, Mail, Podcast } from "lucide-react";
@@ -28,7 +29,7 @@ export function BottomNav() {
 
   // md:hidden will hide this component on medium screens and larger
   return (
-    <nav className="fixed bottom-0 left-0 right-0 h-14 bg-twitter-background border-t border-twitter-divider flex items-center justify-around font-system max-w-md mx-auto z-50 md:hidden">
+    <nav className="fixed bottom-0 left-0 right-0 h-14 border-t border-twitter-divider flex items-center justify-around font-system max-w-md mx-auto z-50 md:hidden">
       {navItems.map((item) => {
         const isActive = isClient && item.href === pathname;
         const IconComponent = item.icon;
@@ -55,7 +56,7 @@ export function BottomNav() {
               {item.badgeCount && item.label === "Notifications" && (
                 <Badge
                   variant="destructive"
-                  className="absolute -top-1 -right-2.5 p-0 h-4 w-4 flex items-center justify-center text-xs bg-twitter-primary text-white"
+                  className="absolute -top-1 -right-2.5 p-0 h-4 w-4 flex items-center justify-center text-xs text-white"
                 >
                   {item.badgeCount > 0 && "•••"}
                 </Badge>

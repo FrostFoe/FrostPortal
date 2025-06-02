@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -33,7 +34,7 @@ export function DetailedTweetView({ tweet }: DetailedTweetViewProps) {
   // const [likes, setLikes] = useState(tweet.likeCount);
 
   return (
-    <div className="p-4 border-b border-twitter-divider font-system bg-twitter-background">
+    <div className="p-4 border-b border-twitter-divider font-system">
       {tweet.retweetedBy && (
         <div className="flex items-center text-xs text-twitter-text-secondary mb-2 ml-6">
           <Repeat size={14} className="mr-2" />
@@ -113,28 +114,28 @@ export function DetailedTweetView({ tweet }: DetailedTweetViewProps) {
         <Button
           variant="ghost"
           size="icon"
-          className="text-twitter-text-secondary hover:text-twitter-primary hover:bg-twitter-primary/10 rounded-full w-10 h-10"
+          className="text-twitter-text-secondary hover:text-twitter-primary rounded-full w-10 h-10"
         >
           <MessageCircle size={22} />
         </Button>
         <Button
           variant="ghost"
           size="icon"
-          className="text-twitter-text-secondary hover:text-twitter-retweet hover:bg-twitter-retweet/10 rounded-full w-10 h-10"
+          className="text-twitter-text-secondary hover:text-twitter-retweet rounded-full w-10 h-10"
         >
           <Repeat2 size={22} />
         </Button>
         <Button
           variant="ghost"
           size="icon"
-          className="text-twitter-text-secondary hover:text-twitter-like hover:bg-twitter-like/10 rounded-full w-10 h-10"
+          className="text-twitter-text-secondary hover:text-twitter-like rounded-full w-10 h-10"
         >
           <Heart size={22} />
         </Button>
         <Button
           variant="ghost"
           size="icon"
-          className="text-twitter-text-secondary hover:text-twitter-primary hover:bg-twitter-primary/10 rounded-full w-10 h-10"
+          className="text-twitter-text-secondary hover:text-twitter-primary rounded-full w-10 h-10"
         >
           <Share size={22} />
         </Button>

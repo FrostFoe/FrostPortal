@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { BadgeCheck, Heart } from "lucide-react"; // Example icon
@@ -60,7 +61,7 @@ const NotificationItemCardComponent: React.FC<NotificationItemCardProps> = ({
   notification,
 }) => {
   return (
-    <div className="flex space-x-3 p-4 border-b border-twitter-divider bg-twitter-background hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors duration-150">
+    <div className="flex space-x-3 p-4 border-b border-twitter-divider transition-colors duration-150">
       <div className="w-8 flex justify-end pt-1">
         {notification.iconType === "like" && (
           <Heart size={20} className="text-twitter-like fill-current" />

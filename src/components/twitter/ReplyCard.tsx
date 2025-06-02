@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -63,7 +64,7 @@ const ReplyCardComponent: React.FC<ReplyCardProps> = ({
   // const [likes, setLikes] = useState(reply.likeCount);
 
   return (
-    <div className="flex space-x-3 px-4 pt-3 bg-twitter-background relative">
+    <div className="flex space-x-3 px-4 pt-3 relative">
       {showConnector && (
         <div className="absolute left-[34px] top-0 bottom-0 w-0.5 bg-twitter-divider -translate-x-1/2"></div>
       )}
@@ -121,7 +122,7 @@ const ReplyCardComponent: React.FC<ReplyCardProps> = ({
           <Button
             variant="ghost"
             size="sm"
-            className="flex items-center space-x-1 p-1 hover:text-twitter-primary hover:bg-twitter-primary/10 rounded-full"
+            className="flex items-center space-x-1 p-1 hover:text-twitter-primary rounded-full"
           >
             <MessageCircle size={18} />
             <span className="text-13px">
@@ -131,7 +132,7 @@ const ReplyCardComponent: React.FC<ReplyCardProps> = ({
           <Button
             variant="ghost"
             size="sm"
-            className="flex items-center space-x-1 p-1 hover:text-twitter-retweet hover:bg-twitter-retweet/10 rounded-full"
+            className="flex items-center space-x-1 p-1 hover:text-twitter-retweet rounded-full"
           >
             <Repeat2 size={18} />
             <span className="text-13px">
@@ -141,7 +142,7 @@ const ReplyCardComponent: React.FC<ReplyCardProps> = ({
           <Button
             variant="ghost"
             size="sm"
-            className="flex items-center space-x-1 p-1 hover:text-twitter-like hover:bg-twitter-like/10 rounded-full"
+            className="flex items-center space-x-1 p-1 hover:text-twitter-like rounded-full"
           >
             <Heart size={18} /> {/* Add fill logic if needed */}
             <span className="text-13px">
@@ -151,7 +152,7 @@ const ReplyCardComponent: React.FC<ReplyCardProps> = ({
           <Button
             variant="ghost"
             size="sm"
-            className="flex items-center space-x-1 p-1 hover:text-twitter-primary hover:bg-twitter-primary/10 rounded-full"
+            className="flex items-center space-x-1 p-1 hover:text-twitter-primary rounded-full"
           >
             <Share size={18} />
           </Button>

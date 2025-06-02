@@ -1,3 +1,4 @@
+
 import type React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -16,7 +17,7 @@ export function TopBar({
   onRightActionClick,
 }: TopBarProps) {
   return (
-    <div className="h-14 bg-twitter-background/80 backdrop-blur-md text-twitter-text-primary px-4 flex items-center justify-between sticky top-0 z-40 border-b border-twitter-divider">
+    <div className="h-14 backdrop-blur-md text-twitter-text-primary px-4 flex items-center justify-between sticky top-0 z-40 border-b border-twitter-divider">
       {/* SheetTrigger for mobile LeftMenu, hidden on desktop */}
       <SheetTrigger asChild className="md:hidden">
         <Button variant="ghost" size="icon" className="p-0 h-8 w-8">

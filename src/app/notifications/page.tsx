@@ -1,3 +1,4 @@
+
 "use client";
 import { useState } from "react";
 import Link from "next/link";
@@ -27,18 +28,18 @@ export default function NotificationsPage() {
     <Sheet>
       {" "}
       {/* Sheet for mobile LeftMenu */}
-      <div className="flex flex-col min-h-screen bg-twitter-background">
+      <div className="flex flex-col min-h-screen">
         <TopBar
           title="Notifications"
           rightActionIcon={Settings}
           onRightActionClick={() => console.log("Top bar settings clicked")}
         />
 
-        <div className="h-12 flex border-b border-twitter-divider bg-twitter-background">
+        <div className="h-12 flex border-b border-twitter-divider">
           <button
             onClick={() => setActiveTab("all")}
             className={`flex-1 h-full flex items-center justify-center text-sm font-semibold relative transition-colors duration-150
-                        ${activeTab === "all" ? "text-twitter-primary" : "text-twitter-text-secondary hover:bg-slate-100"}`}
+                        ${activeTab === "all" ? "text-twitter-primary" : "text-twitter-text-secondary hover:opacity-80"}`}
           >
             All
             {activeTab === "all" && (
@@ -48,7 +49,7 @@ export default function NotificationsPage() {
           <button
             onClick={() => setActiveTab("mentions")}
             className={`flex-1 h-full flex items-center justify-center text-sm font-semibold relative transition-colors duration-150
-                        ${activeTab === "mentions" ? "text-twitter-primary" : "text-twitter-text-secondary hover:bg-slate-100"}`}
+                        ${activeTab === "mentions" ? "text-twitter-primary" : "text-twitter-text-secondary hover:opacity-80"}`}
           >
             Mentions
             {activeTab === "mentions" && (
@@ -57,7 +58,7 @@ export default function NotificationsPage() {
           </button>
         </div>
 
-        <main className="flex-grow overflow-y-auto pb-16 bg-twitter-content-bg-alt">
+        <main className="flex-grow overflow-y-auto pb-16">
           {displayedNotifications.length > 0 ? (
             displayedNotifications.map((notif) => (
               <NotificationItemCard key={notif.id} notification={notif} />
@@ -73,7 +74,7 @@ export default function NotificationsPage() {
         {/* FAB hidden on medium screens and up */}
         <Link href="/compose/tweet" passHref className="md:hidden">
           <Button
-            className="fixed bottom-20 right-4 h-14 w-14 rounded-full bg-twitter-primary text-white shadow-[0px_2px_6px_rgba(0,0,0,0.2)] hover:bg-twitter-primary/90 z-50"
+            className="fixed bottom-20 right-4 h-14 w-14 rounded-full text-white shadow-[0px_2px_6px_rgba(0,0,0,0.2)] hover:opacity-90 z-50"
             size="icon"
             aria-label="Compose Action"
           >
@@ -83,7 +84,7 @@ export default function NotificationsPage() {
       </div>
       <SheetContent
         side="left"
-        className="p-0 w-[280px] bg-twitter-background border-r-0 shadow-xl md:hidden"
+        className="p-0 w-[280px] border-r-0 shadow-xl md:hidden"
       >
         <LeftMenu inSheetContext={true} />
       </SheetContent>

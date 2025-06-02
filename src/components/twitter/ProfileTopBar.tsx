@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -12,12 +13,12 @@ export function ProfileTopBar({ title }: ProfileTopBarProps) {
   const router = useRouter();
 
   return (
-    <div className="h-14 bg-twitter-background/80 backdrop-blur-md text-twitter-text-primary px-2 flex items-center sticky top-0 z-40 border-b border-twitter-divider">
+    <div className="h-14 backdrop-blur-md text-twitter-text-primary px-2 flex items-center sticky top-0 z-40 border-b border-twitter-divider">
       <Button
         variant="ghost"
         size="icon"
         onClick={() => router.back()}
-        className="p-0 h-10 w-10 hover:bg-twitter-primary/10"
+        className="p-0 h-10 w-10"
       >
         <ChevronLeft size={28} className="text-twitter-primary" />
       </Button>

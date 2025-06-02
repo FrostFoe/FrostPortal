@@ -1,3 +1,4 @@
+
 "use client";
 
 import { TweetDetailTopBar } from "@/components/twitter/TweetDetailTopBar";
@@ -23,7 +24,7 @@ export default function TweetDetailPage({
     <div className="flex flex-col min-h-screen">
       <TweetDetailTopBar />
 
-      <main className="flex-grow overflow-y-auto pb-32 bg-twitter-background">
+      <main className="flex-grow overflow-y-auto pb-32">
         <DetailedTweetView tweet={currentTweet} />
         {currentReplies.map((reply, index) => (
           <ReplyCard

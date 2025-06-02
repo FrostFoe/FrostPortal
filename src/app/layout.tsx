@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -6,6 +7,7 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import { LeftMenu } from "@/components/twitter/LeftMenu";
 import { RightSidebar } from "@/components/twitter/RightSidebar";
 import { BottomNav } from "@/components/twitter/BottomNav";
+import AnimatedSpaceBackground from "@/components/special/AnimatedSpaceBackground"; // Added import
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -21,33 +23,33 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <head>{/* Font optimization is now handled by next/font */}</head>
+      <head></head>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider>
-          <div className="min-h-screen bg-twitter-background dark:bg-neutral-900">
-            <div className="container mx-auto flex">
+          <div className="min-h-screen relative"> {/* Removed bg-*, added relative */}
+            <AnimatedSpaceBackground /> {/* Added animated background */}
+            {/* Content container, ensure it's above the background and columns have their own BG */}
+            <div className="container mx-auto flex relative z-0"> {/* z-0 or z-1 to ensure it's above z-[-1] bg */}
               {/* Left Sidebar - Desktop */}
-              <aside className="hidden md:flex w-[275px] flex-shrink-0 border-r border-twitter-divider">
+              <aside className="hidden md:flex w-[275px] flex-shrink-0 border-r border-twitter-divider bg-twitter-background"> {/* Added bg-twitter-background */}
                 <div className="fixed h-full w-[275px] overflow-y-auto p-3">
                   <LeftMenu />
                 </div>
               </aside>
 
               {/* Center Column (Main Content) */}
-              {/* Max width for feed consistency, border-x for desktop */}
-              <main className="w-full md:max-w-[600px] min-h-screen border-r border-l border-twitter-divider">
+              <main className="w-full md:max-w-[600px] min-h-screen border-r border-l border-twitter-divider bg-twitter-background"> {/* Added bg-twitter-background */}
                 {children}
               </main>
 
               {/* Right Sidebar - Desktop */}
-              <aside className="hidden lg:flex w-[350px] flex-shrink-0">
+              <aside className="hidden lg:flex w-[350px] flex-shrink-0 bg-twitter-background"> {/* Added bg-twitter-background */}
                 <div className="fixed h-full w-[350px] overflow-y-auto p-3 border-l border-twitter-divider">
                   <RightSidebar />
                 </div>
               </aside>
             </div>
             <Toaster />
-            {/* BottomNav is handled within its component for md:hidden */}
             <BottomNav />
           </div>
         </ThemeProvider>

@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -140,7 +141,7 @@
   body {
     @apply bg-background text-foreground;
   }
-  /* .twitter-font class removed as next/font handles Inter font application */
+  /* Font optimization is handled by next/font in layout.tsx */
 
   /* Hide Scrollbar Styles */
   /* For Webkit browsers like Chrome, Safari, Edge */
@@ -166,4 +167,13 @@
     color: hsl(var(--twitter-icon-gray));
   }
   /* Dark mode placeholder handled by its specific --twitter-placeholder-text var */
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: var(--star-target-opacity); }
+  }
+  @keyframes drift {
+    0% { transform: translate(0px, 0px); }
+    100% { transform: translate(var(--driftX), var(--driftY)); }
+  }
 }

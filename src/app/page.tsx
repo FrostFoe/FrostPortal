@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 
 import { TopBar } from "@/components/twitter/TopBar";
@@ -11,8 +11,24 @@ import { TweetCard, type Tweet } from "@/components/twitter/TweetCard";
 import { Feather } from "lucide-react";
 import { initialHomeTweets } from "@/contents/homeFeedData"; // Import data
 
+// Helper function to shuffle an array (Fisher-Yates shuffle)
+function shuffleArray<T>(array: T[]): T[] {
+  const newArray = [...array]; // Create a copy to avoid mutating the original
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]]; // Swap elements
+  }
+  return newArray;
+}
+
 export default function TwitterHomePage() {
+  // Initialize with the original order to match server render
   const [tweets, setTweets] = useState<Tweet[]>(initialHomeTweets);
+
+  useEffect(() => {
+    // Shuffle the tweets on the client-side after hydration
+    setTweets(shuffleArray(initialHomeTweets));
+  }, []); // Empty dependency array ensures this runs only once on mount
 
   return (
     <Sheet>

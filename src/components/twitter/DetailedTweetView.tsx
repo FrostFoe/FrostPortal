@@ -34,7 +34,7 @@ export function DetailedTweetView({ tweet }: DetailedTweetViewProps) {
   // const [likes, setLikes] = useState(tweet.likeCount);
 
   return (
-    <div className="p-4 border-b border-twitter-divider font-system">
+    <div className="p-4 border-b border-twitter-divider font-system bg-transparent">
       {tweet.retweetedBy && (
         <div className="flex items-center text-xs text-twitter-text-secondary mb-2 ml-6">
           <Repeat size={14} className="mr-2" />
@@ -115,6 +115,7 @@ export function DetailedTweetView({ tweet }: DetailedTweetViewProps) {
           variant="ghost"
           size="icon"
           className="text-twitter-text-secondary hover:text-twitter-primary rounded-full w-10 h-10"
+          aria-label="Reply"
         >
           <MessageCircle size={22} />
         </Button>
@@ -122,6 +123,7 @@ export function DetailedTweetView({ tweet }: DetailedTweetViewProps) {
           variant="ghost"
           size="icon"
           className="text-twitter-text-secondary hover:text-twitter-retweet rounded-full w-10 h-10"
+          aria-label="Retweet"
         >
           <Repeat2 size={22} />
         </Button>
@@ -129,6 +131,7 @@ export function DetailedTweetView({ tweet }: DetailedTweetViewProps) {
           variant="ghost"
           size="icon"
           className="text-twitter-text-secondary hover:text-twitter-like rounded-full w-10 h-10"
+          aria-label="Like"
         >
           <Heart size={22} />
         </Button>
@@ -136,6 +139,7 @@ export function DetailedTweetView({ tweet }: DetailedTweetViewProps) {
           variant="ghost"
           size="icon"
           className="text-twitter-text-secondary hover:text-twitter-primary rounded-full w-10 h-10"
+          aria-label="Share"
         >
           <Share size={22} />
         </Button>

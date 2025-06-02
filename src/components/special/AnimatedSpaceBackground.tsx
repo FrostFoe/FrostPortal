@@ -32,7 +32,7 @@ const AnimatedSpaceBackground: React.FC = () => {
           top: `${Math.random() * 100}%`,
           left: `${Math.random() * 100}%`,
           size: Math.random() * 2 + 0.5, // Star size: 0.5px to 2.5px
-          initialOpacity: Math.random() * 0.7 + 0.3, // Star opacity: 0.3 to 1.0 for better visibility
+          initialOpacity: Math.random() * 0.5 + 0.5, // Star opacity: 0.5 to 1.0 for better visibility
           twinkleDuration: `${Math.random() * 5 + 3}s`, // Animation duration: 3s to 8s
           twinkleDelay: `${Math.random() * 5}s`, // Animation delay: 0s to 5s
           driftX: (Math.random() - 0.5) * 150, // Horizontal drift: -75px to 75px
@@ -54,7 +54,7 @@ const AnimatedSpaceBackground: React.FC = () => {
       {stars.map((star) => (
         <div
           key={star.id}
-          className="absolute rounded-full bg-white" // Changed to bg-white for pure classy white stars
+          className="absolute rounded-full bg-white"
           style={{
             top: star.top,
             left: star.left,
@@ -64,13 +64,10 @@ const AnimatedSpaceBackground: React.FC = () => {
               twinkle ${star.twinkleDuration} ${star.twinkleDelay} infinite ease-in-out,
               drift ${star.driftDuration} ${star.driftDelay} infinite linear alternate
             `,
-            // @ts-ignore
-            '--star-target-opacity': star.initialOpacity,
-            // @ts-ignore
-            '--driftX': `${star.driftX}px`,
-            // @ts-ignore
-            '--driftY': `${star.driftY}px`,
-          }}
+            ['--star-target-opacity' as string]: star.initialOpacity,
+            ['--driftX'as string]: `${star.driftX}px`,
+            ['--driftY'as string]: `${star.driftY}px`,
+          } as React.CSSProperties}
         />
       ))}
     </div>

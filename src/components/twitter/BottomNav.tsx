@@ -29,15 +29,17 @@ export function BottomNav() {
 
   // md:hidden will hide this component on medium screens and larger
   return (
-    <nav className="fixed bottom-0 left-0 right-0 h-14 border-t border-twitter-divider flex items-center justify-around font-system max-w-md mx-auto z-50 md:hidden">
+    <nav className="fixed bottom-0 left-0 right-0 h-14 border-t border-twitter-divider flex items-center justify-around font-system max-w-md mx-auto z-50 md:hidden bg-transparent">
       {navItems.map((item) => {
         const isActive = isClient && item.href === pathname;
         const IconComponent = item.icon;
+        const ariaLabel = item.href === "/notifications" && item.badgeCount ? `${item.label}, new notifications` : item.label;
         return (
           <Link
             href={item.href}
             key={item.label}
             className="flex-1 flex flex-col justify-center items-center h-full relative group"
+            aria-label={ariaLabel}
           >
             <div className="relative">
               <IconComponent
@@ -52,11 +54,13 @@ export function BottomNav() {
                     ? "currentColor"
                     : "none"
                 }
+                aria-hidden="true"
               />
               {item.badgeCount && item.label === "Notifications" && (
                 <Badge
                   variant="destructive"
-                  className="absolute -top-1 -right-2.5 p-0 h-4 w-4 flex items-center justify-center text-xs text-white"
+                  className="absolute -top-1 -right-2.5 p-0 h-4 w-4 flex items-center justify-center text-xs text-white bg-twitter-like"
+                  aria-hidden="true" 
                 >
                   {item.badgeCount > 0 && "•••"}
                 </Badge>

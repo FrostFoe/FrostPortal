@@ -57,9 +57,9 @@ const TweetCardComponent: React.FC<TweetCardProps> = ({ tweet }) => {
     <Link
       href={`/tweet/${tweet.id}`}
       passHref
-      className="block hover:bg-slate-50/0 dark:hover:bg-slate-800/0 transition-colors duration-150"
+      className="block hover:bg-slate-50/5 dark:hover:bg-slate-800/20 transition-colors duration-150"
     >
-      <div className="flex space-x-3 p-4 border-b border-twitter-divider font-system cursor-pointer">
+      <div className="flex space-x-3 p-4 border-b border-twitter-divider font-system cursor-pointer bg-transparent">
         <Avatar className="h-12 w-12 flex-shrink-0">
           <AvatarImage
             src={tweet.avatarUrl}
@@ -104,6 +104,7 @@ const TweetCardComponent: React.FC<TweetCardProps> = ({ tweet }) => {
               size="sm"
               className="flex items-center space-x-1 p-1 hover:text-twitter-primary"
               onClick={handleActionClick}
+              aria-label="Reply"
             >
               <MessageCircle size={18} />
               <span className="text-13px">
@@ -115,6 +116,7 @@ const TweetCardComponent: React.FC<TweetCardProps> = ({ tweet }) => {
               size="sm"
               className={`flex items-center space-x-1 p-1 ${isRetweeted ? "text-twitter-retweet" : "hover:text-twitter-retweet"}`}
               onClick={handleRetweet}
+              aria-label="Retweet"
             >
               <Repeat2 size={18} />
               <span className="text-13px">{retweets > 0 ? retweets : ""}</span>
@@ -124,6 +126,7 @@ const TweetCardComponent: React.FC<TweetCardProps> = ({ tweet }) => {
               size="sm"
               className={`flex items-center space-x-1 p-1 ${isLiked ? "text-twitter-like" : "hover:text-twitter-like"}`}
               onClick={handleLike}
+              aria-label="Like"
             >
               <Heart size={18} className={isLiked ? "fill-twitter-like" : ""} />
               <span className="text-13px">{likes > 0 ? likes : ""}</span>
@@ -133,6 +136,7 @@ const TweetCardComponent: React.FC<TweetCardProps> = ({ tweet }) => {
               size="sm"
               className="flex items-center space-x-1 p-1 hover:text-twitter-primary"
               onClick={handleActionClick}
+              aria-label="Share"
             >
               <Share size={18} />
             </Button>

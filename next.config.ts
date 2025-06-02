@@ -1,12 +1,13 @@
+
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   swcMinify: true, // Explicitly enable SWC minification
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
   images: {
     remotePatterns: [

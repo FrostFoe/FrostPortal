@@ -48,7 +48,7 @@ const AnimatedSpaceBackground: React.FC = () => {
 
   return (
     <div
-      className="fixed inset-0 z-[-1] overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-950 to-black"
+      className="fixed inset-0 z-[-1] overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-900 to-indigo-950"
       aria-hidden="true"
     >
       {stars.map((star) => (

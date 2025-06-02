@@ -147,7 +147,7 @@ export default function ProfilePage() {
         {/* FAB hidden on medium screens and up */}
         <Link href="/compose/tweet" passHref>
           <Button
-            className="fixed bottom-20 right-4 h-14 w-14 rounded-full text-white shadow-[0px_2px_6px_rgba(0,0,0,0.2)] hover:opacity-90 z-50 md:hidden"
+            className="fixed bottom-20 right-4 h-14 w-14 rounded-full text-white shadow-[0px_2px_6px_rgba(0,0,0,0.2)] hover:opacity-90 z-50 md:hidden bg-twitter-primary"
             size="icon"
             aria-label="Compose Tweet"
           >
@@ -157,7 +157,7 @@ export default function ProfilePage() {
       </div>
       <SheetContent
         side="left"
-        className="p-0 w-[280px] border-r-0 shadow-xl md:hidden"
+        className="p-0 w-[280px] border-r-0 shadow-xl md:hidden bg-background"
       >
         <LeftMenu inSheetContext={true} />
       </SheetContent>

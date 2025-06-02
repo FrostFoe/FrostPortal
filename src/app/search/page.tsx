@@ -31,7 +31,7 @@ export default function SearchPage() {
             <Input
               type="search"
               placeholder="Search Twitter"
-              className="pl-10 pr-10 h-10 rounded-full border-transparent focus:border-twitter-primary focus:ring-twitter-primary placeholder-twitter-icon-gray text-sm bg-muted/50 dark:bg-muted/20"
+              className="pl-10 pr-10 h-10 rounded-full border-transparent focus:border-twitter-primary focus:ring-twitter-primary placeholder-twitter-icon-gray bg-muted/50 dark:bg-muted/20"
             />
             <Settings className="absolute right-3 h-5 w-5 text-twitter-icon-gray" />
           </div>
@@ -67,7 +67,7 @@ export default function SearchPage() {
       </div>
       <SheetContent
         side="left"
-        className="p-0 w-[280px] border-r-0 shadow-xl md:hidden bg-transparent"
+        className="p-0 w-[280px] border-r-0 shadow-xl md:hidden bg-background"
       >
         <LeftMenu inSheetContext={true} />
       </SheetContent>

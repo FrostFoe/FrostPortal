@@ -1,33 +1,33 @@
-
 "use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
+import { useState } from "react";
+import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 
 import { TopBar } from "@/components/twitter/TopBar";
 import { LeftMenu } from "@/components/twitter/LeftMenu";
 import { TweetCard, type Tweet } from "@/components/twitter/TweetCard";
-import { Feather } from 'lucide-react';
-import { initialHomeTweets } from '@/contents/homeFeedData'; // Import data
+import { Feather } from "lucide-react";
+import { initialHomeTweets } from "@/contents/homeFeedData"; // Import data
 
 export default function TwitterHomePage() {
   const [tweets, setTweets] = useState<Tweet[]>(initialHomeTweets);
 
   return (
-    <Sheet> {/* Sheet for mobile LeftMenu, triggered by TopBar */}
-      <div className="flex flex-col min-h-screen"> {/* Use min-h-screen to allow content to grow */}
-        
+    <Sheet>
+      {" "}
+      {/* Sheet for mobile LeftMenu, triggered by TopBar */}
+      <div className="flex flex-col min-h-screen">
+        {" "}
+        {/* Use min-h-screen to allow content to grow */}
         <TopBar title="Home" />
-        
         {/* pb-16 for BottomNav height on mobile */}
-        <main className="flex-grow overflow-y-auto pb-16"> 
+        <main className="flex-grow overflow-y-auto pb-16">
           {tweets.map((tweet) => (
             <TweetCard key={tweet.id} tweet={tweet} />
           ))}
         </main>
-
         {/* FAB hidden on medium screens and up */}
         <Link href="/compose/tweet" passHref className="md:hidden">
           <Button
@@ -35,14 +35,15 @@ export default function TwitterHomePage() {
             size="icon"
             aria-label="Compose Tweet"
           >
-              <Feather size={28} />
+            <Feather size={28} />
           </Button>
         </Link>
-        
       </div>
-
       {/* SheetContent for mobile LeftMenu, hidden on desktop */}
-      <SheetContent side="left" className="p-0 w-[280px] bg-twitter-background border-r-0 shadow-xl md:hidden">
+      <SheetContent
+        side="left"
+        className="p-0 w-[280px] bg-twitter-background border-r-0 shadow-xl md:hidden"
+      >
         <LeftMenu inSheetContext={true} />
       </SheetContent>
     </Sheet>

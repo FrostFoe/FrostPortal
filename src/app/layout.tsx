@@ -1,18 +1,17 @@
-
-import type {Metadata} from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-import { ThemeProvider } from '@/context/ThemeContext';
-import { LeftMenu } from '@/components/twitter/LeftMenu';
-import { RightSidebar } from '@/components/twitter/RightSidebar';
-import { BottomNav } from '@/components/twitter/BottomNav';
+import { ThemeProvider } from "@/context/ThemeContext";
+import { LeftMenu } from "@/components/twitter/LeftMenu";
+import { RightSidebar } from "@/components/twitter/RightSidebar";
+import { BottomNav } from "@/components/twitter/BottomNav";
 
-const inter = Inter({ subsets: ['latin'], display: 'swap' });
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: 'Twitter Clone',
-  description: 'A mobile Twitter UI clone, now responsive for desktop.',
+  title: "Frostter",
+  description: "A mobile Twitter UI clone, now responsive for desktop.",
 };
 
 export default function RootLayout({
@@ -22,9 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <head>
-        {/* Font optimization is now handled by next/font */}
-      </head>
+      <head>{/* Font optimization is now handled by next/font */}</head>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider>
           <div className="min-h-screen bg-twitter-background dark:bg-neutral-900">
@@ -44,7 +41,7 @@ export default function RootLayout({
 
               {/* Right Sidebar - Desktop */}
               <aside className="hidden lg:flex w-[350px] flex-shrink-0">
-                 <div className="fixed h-full w-[350px] overflow-y-auto p-3 border-l border-twitter-divider">
+                <div className="fixed h-full w-[350px] overflow-y-auto p-3 border-l border-twitter-divider">
                   <RightSidebar />
                 </div>
               </aside>

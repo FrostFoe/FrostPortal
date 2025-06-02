@@ -1,6 +1,5 @@
-
-import type { DetailedTweetType } from '@/components/twitter/DetailedTweetView';
-import type { ReplyType } from '@/components/twitter/ReplyCard';
+import type { DetailedTweetType } from "@/components/twitter/DetailedTweetView";
+import type { ReplyType } from "@/components/twitter/ReplyCard";
 
 export const mainTweetDetailData: DetailedTweetType = {
   id: "tweet1_detail",
@@ -28,7 +27,8 @@ export const repliesForTweetData: ReplyType[] = [
       avatar_data_ai_hint: "man portrait",
     },
     replyingTo: "@karennne",
-    content: "Interesting Nicola that not one reply or tag on this #UX talent shout out in the 24hrs since your tweet here......🤔",
+    content:
+      "Interesting Nicola that not one reply or tag on this #UX talent shout out in the 24hrs since your tweet here......🤔",
     timestamp: "2d",
     replyCount: 1,
     retweetCount: 0,
@@ -43,7 +43,8 @@ export const repliesForTweetData: ReplyType[] = [
       avatar_data_ai_hint: "woman smiling",
     },
     replyingTo: "@kiero_d",
-    content: "Maybe I forgot the hashtags. #hiringux #designjobs #sydneyux #sydneydesigners #uxjobs",
+    content:
+      "Maybe I forgot the hashtags. #hiringux #designjobs #sydneyux #sydneydesigners #uxjobs",
     timestamp: "2d",
     replyCount: 0,
     retweetCount: 0,

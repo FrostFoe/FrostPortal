@@ -1,12 +1,11 @@
-
 "use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Repeat2, Heart, Share } from 'lucide-react';
+import { MessageCircle, Repeat2, Heart, Share } from "lucide-react";
 
 export interface Tweet {
   id: string;
@@ -46,7 +45,7 @@ const TweetCardComponent: React.FC<TweetCardProps> = ({ tweet }) => {
     setIsRetweeted(!isRetweeted);
     setRetweets(isRetweeted ? retweets - 1 : retweets + 1);
   };
-  
+
   const handleActionClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -54,49 +53,86 @@ const TweetCardComponent: React.FC<TweetCardProps> = ({ tweet }) => {
   };
 
   return (
-    <Link href={`/tweet/${tweet.id}`} passHref className="block hover:bg-slate-50/30 transition-colors duration-150">
+    <Link
+      href={`/tweet/${tweet.id}`}
+      passHref
+      className="block hover:bg-slate-50/30 transition-colors duration-150"
+    >
       <div className="flex space-x-3 p-4 border-b border-twitter-divider font-system bg-twitter-background cursor-pointer">
         <Avatar className="h-12 w-12 flex-shrink-0">
-          <AvatarImage src={tweet.avatarUrl} alt={tweet.name} data-ai-hint={tweet.avatar_data_ai_hint || "user avatar"} />
+          <AvatarImage
+            src={tweet.avatarUrl}
+            alt={tweet.name}
+            data-ai-hint={tweet.avatar_data_ai_hint || "user avatar"}
+          />
           <AvatarFallback>{tweet.name.substring(0, 1)}</AvatarFallback>
         </Avatar>
         <div className="flex-1">
           <div className="flex items-center space-x-1">
-            <span className="font-bold text-twitter-text-primary text-16px">{tweet.name}</span>
-            <span className="text-twitter-text-secondary text-14px">@{tweet.handle}</span>
-            <span className="text-twitter-text-secondary text-14px">&middot;</span>
-            <span className="text-twitter-text-secondary text-14px">{tweet.timestamp}</span>
+            <span className="font-bold text-twitter-text-primary text-16px">
+              {tweet.name}
+            </span>
+            <span className="text-twitter-text-secondary text-14px">
+              @{tweet.handle}
+            </span>
+            <span className="text-twitter-text-secondary text-14px">
+              &middot;
+            </span>
+            <span className="text-twitter-text-secondary text-14px">
+              {tweet.timestamp}
+            </span>
           </div>
-          <p className="text-twitter-text-primary text-15px mt-1 whitespace-pre-wrap">{tweet.content}</p>
+          <p className="text-twitter-text-primary text-15px mt-1 whitespace-pre-wrap">
+            {tweet.content}
+          </p>
           {tweet.imageAttachmentUrl && (
             <div className="mt-2 rounded-xl overflow-hidden border border-twitter-divider">
-              <Image src={tweet.imageAttachmentUrl} alt="Tweet image" width={500} height={300} className="object-cover w-full" data-ai-hint={tweet.data_ai_hint || "tweet image"}/>
+              <Image
+                src={tweet.imageAttachmentUrl}
+                alt="Tweet image"
+                width={500}
+                height={300}
+                className="object-cover w-full"
+                data-ai-hint={tweet.data_ai_hint || "tweet image"}
+              />
             </div>
           )}
           <div className="flex justify-between items-center mt-3 text-twitter-text-secondary">
-            <Button variant="ghost" size="sm" className="flex items-center space-x-1 p-1 hover:text-twitter-primary hover:bg-twitter-primary/10" onClick={handleActionClick}>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="flex items-center space-x-1 p-1 hover:text-twitter-primary hover:bg-twitter-primary/10"
+              onClick={handleActionClick}
+            >
               <MessageCircle size={18} />
-              <span className="text-13px">{tweet.replyCount > 0 ? tweet.replyCount : ''}</span>
+              <span className="text-13px">
+                {tweet.replyCount > 0 ? tweet.replyCount : ""}
+              </span>
             </Button>
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className={`flex items-center space-x-1 p-1 hover:bg-twitter-retweet/10 ${isRetweeted ? 'text-twitter-retweet' : 'hover:text-twitter-retweet'}`}
+            <Button
+              variant="ghost"
+              size="sm"
+              className={`flex items-center space-x-1 p-1 hover:bg-twitter-retweet/10 ${isRetweeted ? "text-twitter-retweet" : "hover:text-twitter-retweet"}`}
               onClick={handleRetweet}
             >
               <Repeat2 size={18} />
-              <span className="text-13px">{retweets > 0 ? retweets : ''}</span>
+              <span className="text-13px">{retweets > 0 ? retweets : ""}</span>
             </Button>
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className={`flex items-center space-x-1 p-1 hover:bg-twitter-like/10 ${isLiked ? 'text-twitter-like' : 'hover:text-twitter-like'}`}
+            <Button
+              variant="ghost"
+              size="sm"
+              className={`flex items-center space-x-1 p-1 hover:bg-twitter-like/10 ${isLiked ? "text-twitter-like" : "hover:text-twitter-like"}`}
               onClick={handleLike}
             >
-              <Heart size={18} className={isLiked ? 'fill-twitter-like' : ''} />
-              <span className="text-13px">{likes > 0 ? likes : ''}</span>
+              <Heart size={18} className={isLiked ? "fill-twitter-like" : ""} />
+              <span className="text-13px">{likes > 0 ? likes : ""}</span>
             </Button>
-            <Button variant="ghost" size="sm" className="flex items-center space-x-1 p-1 hover:text-twitter-primary hover:bg-twitter-primary/10" onClick={handleActionClick}>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="flex items-center space-x-1 p-1 hover:text-twitter-primary hover:bg-twitter-primary/10"
+              onClick={handleActionClick}
+            >
               <Share size={18} />
             </Button>
           </div>

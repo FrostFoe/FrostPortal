@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Twitter Clone',
-  description: 'A mobile Twitter UI clone.',
+  title: "Twitter Clone",
+  description: "A mobile Twitter UI clone.",
 };
 
 export default function TwitterAppLayout({

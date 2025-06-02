@@ -1,58 +1,71 @@
-
 "use client";
-import { useState } from 'react';
-import Link from 'next/link';
+import { useState } from "react";
+import Link from "next/link";
 
 import { TopBar } from "@/components/twitter/TopBar";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { LeftMenu } from "@/components/twitter/LeftMenu";
-import { NotificationItemCard, type NotificationItem } from "@/components/twitter/NotificationItemCard";
-import { Settings, Plus } from "lucide-react"; 
-import { Button } from '@/components/ui/button';
-import { initialNotificationsData } from '@/contents/notificationsData'; // Import data
-
+import {
+  NotificationItemCard,
+  type NotificationItem,
+} from "@/components/twitter/NotificationItemCard";
+import { Settings, Plus } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { initialNotificationsData } from "@/contents/notificationsData"; // Import data
 
 export default function NotificationsPage() {
-  const [activeTab, setActiveTab] = useState<'all' | 'mentions'>('all');
+  const [activeTab, setActiveTab] = useState<"all" | "mentions">("all");
   // In a real app, notifications would likely be fetched or managed via a global state/context
-  const [notifications, setNotifications] = useState<NotificationItem[]>(initialNotificationsData);
+  const [notifications, setNotifications] = useState<NotificationItem[]>(
+    initialNotificationsData,
+  );
 
   // Filter logic for tabs would go here if needed
-  const displayedNotifications = notifications; 
+  const displayedNotifications = notifications;
 
   return (
-    <Sheet> {/* Sheet for mobile LeftMenu */}
+    <Sheet>
+      {" "}
+      {/* Sheet for mobile LeftMenu */}
       <div className="flex flex-col min-h-screen bg-twitter-background">
-        
-        <TopBar title="Notifications" rightActionIcon={Settings} onRightActionClick={() => console.log("Top bar settings clicked")} />
-        
+        <TopBar
+          title="Notifications"
+          rightActionIcon={Settings}
+          onRightActionClick={() => console.log("Top bar settings clicked")}
+        />
+
         <div className="h-12 flex border-b border-twitter-divider bg-twitter-background">
-          <button 
-            onClick={() => setActiveTab('all')}
+          <button
+            onClick={() => setActiveTab("all")}
             className={`flex-1 h-full flex items-center justify-center text-sm font-semibold relative transition-colors duration-150
-                        ${activeTab === 'all' ? 'text-twitter-primary' : 'text-twitter-text-secondary hover:bg-slate-100'}`}
+                        ${activeTab === "all" ? "text-twitter-primary" : "text-twitter-text-secondary hover:bg-slate-100"}`}
           >
             All
-            {activeTab === 'all' && <div className="absolute bottom-0 h-[2px] w-14 bg-twitter-primary rounded-full"></div>}
+            {activeTab === "all" && (
+              <div className="absolute bottom-0 h-[2px] w-14 bg-twitter-primary rounded-full"></div>
+            )}
           </button>
-          <button 
-            onClick={() => setActiveTab('mentions')}
+          <button
+            onClick={() => setActiveTab("mentions")}
             className={`flex-1 h-full flex items-center justify-center text-sm font-semibold relative transition-colors duration-150
-                        ${activeTab === 'mentions' ? 'text-twitter-primary' : 'text-twitter-text-secondary hover:bg-slate-100'}`}
+                        ${activeTab === "mentions" ? "text-twitter-primary" : "text-twitter-text-secondary hover:bg-slate-100"}`}
           >
             Mentions
-            {activeTab === 'mentions' && <div className="absolute bottom-0 h-[2px] w-20 bg-twitter-primary rounded-full"></div>}
+            {activeTab === "mentions" && (
+              <div className="absolute bottom-0 h-[2px] w-20 bg-twitter-primary rounded-full"></div>
+            )}
           </button>
         </div>
 
         <main className="flex-grow overflow-y-auto pb-16 bg-twitter-content-bg-alt">
           {displayedNotifications.length > 0 ? (
-            displayedNotifications.map(notif => (
+            displayedNotifications.map((notif) => (
               <NotificationItemCard key={notif.id} notification={notif} />
             ))
           ) : (
             <p className="text-center text-twitter-text-secondary p-8 mt-4">
-              No new notifications {activeTab === 'mentions' ? 'or mentions ' : ''}yet.
+              No new notifications{" "}
+              {activeTab === "mentions" ? "or mentions " : ""}yet.
             </p>
           )}
         </main>
@@ -67,9 +80,11 @@ export default function NotificationsPage() {
             <Plus size={28} />
           </Button>
         </Link>
-        
       </div>
-      <SheetContent side="left" className="p-0 w-[280px] bg-twitter-background border-r-0 shadow-xl md:hidden">
+      <SheetContent
+        side="left"
+        className="p-0 w-[280px] bg-twitter-background border-r-0 shadow-xl md:hidden"
+      >
         <LeftMenu inSheetContext={true} />
       </SheetContent>
     </Sheet>

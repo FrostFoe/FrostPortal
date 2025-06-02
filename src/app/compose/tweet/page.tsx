@@ -1,15 +1,25 @@
-
 "use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Camera, FileText, BarChart3, MapPin, Image as ImageIcon, Plus, Circle } from "lucide-react";
-import { mediaPreviewItemsData, userComposeAvatar } from '@/contents/composeData'; // Import data
+import {
+  Camera,
+  FileText,
+  BarChart3,
+  MapPin,
+  Image as ImageIcon,
+  Plus,
+  Circle,
+} from "lucide-react";
+import {
+  mediaPreviewItemsData,
+  userComposeAvatar,
+} from "@/contents/composeData"; // Import data
 
 export default function ComposeTweetPage() {
   const [tweetText, setTweetText] = useState("");
@@ -17,14 +27,18 @@ export default function ComposeTweetPage() {
 
   return (
     <div className="flex flex-col h-screen bg-twitter-background text-twitter-text-primary overflow-hidden">
-      
       {/* Top Bar */}
       <div className="flex items-center justify-between p-3 border-b border-twitter-divider">
         <Link href="/" passHref>
-          <Button variant="ghost" className="text-twitter-primary text-16px p-0 h-auto hover:bg-transparent">Cancel</Button>
+          <Button
+            variant="ghost"
+            className="text-twitter-primary text-16px p-0 h-auto hover:bg-transparent"
+          >
+            Cancel
+          </Button>
         </Link>
-        <Button 
-          className={`rounded-full px-4 py-1.5 text-sm font-bold h-8 text-white ${isTweetButtonDisabled ? 'bg-twitter-primary/50' : 'bg-twitter-primary hover:bg-twitter-primary/90'}`}
+        <Button
+          className={`rounded-full px-4 py-1.5 text-sm font-bold h-8 text-white ${isTweetButtonDisabled ? "bg-twitter-primary/50" : "bg-twitter-primary hover:bg-twitter-primary/90"}`}
           disabled={isTweetButtonDisabled}
         >
           Tweet
@@ -34,8 +48,14 @@ export default function ComposeTweetPage() {
       {/* Tweet Input Area */}
       <div className="flex-grow flex p-3 space-x-3 overflow-y-auto">
         <Avatar className="h-10 w-10 flex-shrink-0">
-          <AvatarImage src={userComposeAvatar.src} alt={userComposeAvatar.alt} data-ai-hint={userComposeAvatar.hint} />
-          <AvatarFallback>{userComposeAvatar.alt.substring(0,1)}</AvatarFallback>
+          <AvatarImage
+            src={userComposeAvatar.src}
+            alt={userComposeAvatar.alt}
+            data-ai-hint={userComposeAvatar.hint}
+          />
+          <AvatarFallback>
+            {userComposeAvatar.alt.substring(0, 1)}
+          </AvatarFallback>
         </Avatar>
         <Textarea
           placeholder="What's happening?"
@@ -44,7 +64,7 @@ export default function ComposeTweetPage() {
           onChange={(e) => setTweetText(e.target.value)}
         />
       </div>
-      
+
       {/* Media Preview (optional, appears above keyboard/toolbar) */}
       <div className="px-3 pb-2 border-b border-twitter-divider">
         <div className="flex space-x-2 overflow-x-auto">
@@ -52,8 +72,18 @@ export default function ComposeTweetPage() {
             <Camera size={32} />
           </button>
           {mediaPreviewItemsData.map((item, index) => (
-            <div key={index} className="flex-shrink-0 h-20 w-20 rounded-lg overflow-hidden">
-              <Image src={item.src} alt={item.alt} width={80} height={80} className="object-cover h-full w-full" data-ai-hint={item.hint} />
+            <div
+              key={index}
+              className="flex-shrink-0 h-20 w-20 rounded-lg overflow-hidden"
+            >
+              <Image
+                src={item.src}
+                alt={item.alt}
+                width={80}
+                height={80}
+                className="object-cover h-full w-full"
+                data-ai-hint={item.hint}
+              />
             </div>
           ))}
         </div>
@@ -68,7 +98,7 @@ export default function ComposeTweetPage() {
           <button className="text-twitter-primary hover:text-twitter-primary/80">
             <FileText size={24} /> {/* GIF icon */}
           </button>
-           <button className="text-twitter-primary hover:text-twitter-primary/80">
+          <button className="text-twitter-primary hover:text-twitter-primary/80">
             <BarChart3 size={24} /> {/* Poll icon */}
           </button>
           <button className="text-twitter-primary hover:text-twitter-primary/80">

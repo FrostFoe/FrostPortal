@@ -1,6 +1,5 @@
-
-import Link from 'next/link'; 
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
 import { TopBar } from "@/components/twitter/TopBar";
 // BottomNav is now global
@@ -11,19 +10,22 @@ import { Plus } from "lucide-react";
 
 export default function SpacesPage() {
   return (
-    <Sheet> {/* Sheet for mobile LeftMenu */}
+    <Sheet>
+      {" "}
+      {/* Sheet for mobile LeftMenu */}
       <div className="flex flex-col min-h-screen bg-twitter-background">
-        
         <TopBar title="Spaces" />
         <main className="flex-grow overflow-y-auto p-4 pb-16 text-twitter-text-primary flex flex-col items-center justify-center">
           <h1 className="text-2xl font-bold mb-4">Spaces</h1>
-          <p className="text-twitter-text-secondary mb-6">Audio conversations happen here.</p>
+          <p className="text-twitter-text-secondary mb-6">
+            Audio conversations happen here.
+          </p>
           <div className="rounded-lg mb-6 overflow-hidden">
-            <Image 
-              src="https://placehold.co/300x200.png" 
-              alt="Spaces Illustration" 
-              width={300} 
-              height={200} 
+            <Image
+              src="https://placehold.co/300x200.png"
+              alt="Spaces Illustration"
+              width={300}
+              height={200}
               data-ai-hint="audio wave"
             />
           </div>
@@ -44,7 +46,10 @@ export default function SpacesPage() {
         </Link>
         {/* BottomNav is now global */}
       </div>
-      <SheetContent side="left" className="p-0 w-[280px] bg-twitter-background border-r-0 shadow-xl md:hidden">
+      <SheetContent
+        side="left"
+        className="p-0 w-[280px] bg-twitter-background border-r-0 shadow-xl md:hidden"
+      >
         <LeftMenu inSheetContext={true} />
       </SheetContent>
     </Sheet>

@@ -1,0 +1,170 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* #FFFFFF */
+    --foreground: 207 13% 9%; /* #14171A - Twitter Text Primary */
+
+    --card: 0 0% 100%; 
+    --card-foreground: 207 13% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 207 13% 9%;
+
+    --primary: 203 89% 53%; /* #1DA1F2 - Twitter Primary Blue */
+    --primary-foreground: 0 0% 100%; /* White text on primary blue */
+
+    --secondary: 214 33% 97%; /* #F5F8FA - Twitter Content Alt BG */
+    --secondary-foreground: 207 13% 9%; /* Twitter Text Primary on light secondary */
+    
+    --muted: 220 17% 95%; /* #E6ECF0 - Twitter Input BG */
+    --muted-foreground: 208 13% 47%; /* #657786 - Twitter Text Secondary */
+
+    --accent: 203 89% 48%; /* Slightly darker Twitter Blue for accents if needed, or keep same */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%; /* Standard red */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 206 33% 94%; /* #E1E8ED - Twitter Divider */
+    --input: 220 17% 95%; /* #E6ECF0 - Twitter Input BG */
+    --ring: 203 89% 53%; /* Twitter Primary Blue for rings */
+    
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+
+    /* Sidebar specific colors - Using general twitter colors for consistency */
+    --sidebar-background: 0 0% 100%; 
+    --sidebar-foreground: 207 13% 9%;
+    --sidebar-primary: 203 89% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 203 89% 48%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 206 33% 94%;
+    --sidebar-ring: 203 89% 53%;
+
+    /* Twitter Specific Colors - already defined or integrated above */
+    --twitter-primary: 203 89% 53%; /* #1DA1F2 */
+    --twitter-text-primary: 207 13% 9%; /* #14171A */
+    --twitter-text-secondary: 208 13% 47%; /* #657786 */
+    --twitter-background: 0 0% 100%; /* #FFFFFF */
+    --twitter-divider: 206 33% 94%; /* #E1E8ED */
+    --twitter-like: 348 77% 51%; /* #E0245E */
+    --twitter-retweet: 145 78% 42%; /* #17BF63 */
+    
+    --twitter-input-bg: 220 17% 95%; /* #E6ECF0 */
+    --twitter-icon-gray: 210 17% 75%; /* #AAB8C2 */
+    --twitter-content-bg-alt: 214 33% 97%; /* #F5F8FA */
+    --twitter-placeholder-text: 210 17% 75%; /* #AAB8C2 */
+
+    /* Custom Scrollbar Colors (kept for reference, but scrollbar will be hidden) */
+    --scrollbar-thumb: 203 89% 53%; 
+    --scrollbar-track: 220 17% 95%; 
+  }
+
+  .dark {
+    --background: 207 13% 9%; /* #15202B - Twitter Dark Background */
+    --foreground: 0 0% 100%; /* #FFFFFF - White Text */
+
+    --card: 210 13% 12%; /* #192734 - Darker card elements */
+    --card-foreground: 0 0% 100%;
+
+    --popover: 210 13% 12%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 203 89% 53%; /* #1DA1F2 - Twitter Primary Blue (same) */
+    --primary-foreground: 0 0% 100%; 
+
+    --secondary: 210 13% 15%; /* Slightly lighter dark for secondary elements */
+    --secondary-foreground: 0 0% 90%; /* Lighter text on dark secondary */
+    
+    --muted: 210 11% 20%; /* #2C3640 - Darker muted elements */
+    --muted-foreground: 210 17% 75%; /* #AAB8C2 - Twitter Icon Gray (as muted foreground) */
+
+    --accent: 203 89% 60%; /* Slightly brighter blue for dark mode accents */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%; /* Standard red, slightly adjusted if needed for dark */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 12% 22%; /* #38444D - Darker Twitter Divider */
+    --input: 210 11% 15%; /* #253341 - Darker Twitter Input BG */
+    --ring: 203 89% 53%; 
+    
+    --chart-1: 203 89% 53%;
+    --chart-2: 145 78% 42%;
+    --chart-3: 348 77% 51%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+
+    /* Sidebar specific colors - Dark Mode */
+    --sidebar-background: 207 13% 9%; 
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 203 89% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 203 89% 60%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 210 12% 22%;
+    --sidebar-ring: 203 89% 53%;
+
+    /* Twitter Specific Colors - Dark Mode */
+    --twitter-primary: 203 89% 53%; /* #1DA1F2 */
+    --twitter-text-primary: 0 0% 100%; /* #FFFFFF */
+    --twitter-text-secondary: 210 17% 75%; /* #AAB8C2 */
+    --twitter-background: 207 13% 9%; /* #15202B */
+    --twitter-divider: 210 12% 22%; /* #38444D */
+    --twitter-like: 348 77% 61%; /* Brighter like */
+    --twitter-retweet: 145 78% 52%; /* Brighter retweet */
+
+    --twitter-input-bg: 210 11% 15%; /* #253341 */
+    --twitter-icon-gray: 210 17% 55%; /* Darker version for #AAB8C2 */
+    --twitter-content-bg-alt: 207 13% 12%; /* #192734 - For notification list, etc. */
+    --twitter-placeholder-text: 210 17% 55%;
+
+    /* Custom Scrollbar Colors - Dark Mode (kept for reference, but scrollbar will be hidden) */
+    --scrollbar-thumb: 203 89% 48%; 
+    --scrollbar-track: 210 11% 15%; 
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  /* .twitter-font class removed as next/font handles Inter font application */
+
+  /* Hide Scrollbar Styles */
+  /* For Webkit browsers like Chrome, Safari, Edge */
+  ::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Webkit browsers */
+  }
+
+  /* For Firefox */
+  html {
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge (older versions) */
+  }
+  
+  /* For general purpose hiding if other methods don't catch all */
+  body {
+    overflow: -moz-scrollbars-none; /* Firefox (older) */
+  }
+}
+
+/* Custom placeholder color utility */
+@layer utilities {
+  .placeholder-twitter-icon-gray::placeholder {
+    color: hsl(var(--twitter-icon-gray));
+  }
+  /* Dark mode placeholder handled by its specific --twitter-placeholder-text var */
+}

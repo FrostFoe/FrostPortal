@@ -8,6 +8,11 @@ import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { LeftMenu } from "@/components/twitter/LeftMenu";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Spaces",
+};
 
 export default function SpacesPage() {
   return (
@@ -30,7 +35,7 @@ export default function SpacesPage() {
               data-ai-hint="audio wave"
             />
           </div>
-          <Button className="text-white font-bold rounded-full px-6 hover:opacity-90">
+          <Button className="text-white font-bold rounded-full px-6 hover:opacity-90 bg-twitter-primary">
             Explore Spaces
           </Button>
         </main>
@@ -38,7 +43,7 @@ export default function SpacesPage() {
         <Link href="/compose/tweet" passHref className="md:hidden">
           <Button
             asChild
-            className="fixed bottom-20 right-4 h-14 w-14 rounded-full text-white shadow-[0px_2px_6px_rgba(0,0,0,0.2)] hover:opacity-90 z-50"
+            className="fixed bottom-20 right-4 h-14 w-14 rounded-full text-white shadow-[0px_2px_6px_rgba(0,0,0,0.2)] hover:opacity-90 z-50 bg-twitter-primary"
             size="icon"
             aria-label="Start a Space"
           >
@@ -49,7 +54,7 @@ export default function SpacesPage() {
       </div>
       <SheetContent
         side="left"
-        className="p-0 w-[280px] border-r-0 shadow-xl md:hidden"
+        className="p-0 w-[280px] bg-twitter-background border-r-0 shadow-xl md:hidden"
       >
         <LeftMenu inSheetContext={true} />
       </SheetContent>

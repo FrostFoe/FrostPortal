@@ -13,6 +13,8 @@ import { Button } from "@/components/ui/button";
 import { TweetCard, type Tweet } from "@/components/twitter/TweetCard";
 import { Feather, Link2, CalendarDays } from "lucide-react";
 import { userProfileData, profileTweetsData } from "@/contents/profileData"; // Import data
+// No specific page title metadata for client components in App Router by default,
+// title will be inherited from layout or set dynamically if needed.
 
 type ProfileTab = "Tweets" | "Tweets & replies" | "Media" | "Likes";
 
@@ -157,7 +159,7 @@ export default function ProfilePage() {
       </div>
       <SheetContent
         side="left"
-        className="p-0 w-[280px] border-r-0 shadow-xl md:hidden bg-background"
+        className="p-0 w-[280px] border-r-0 shadow-xl md:hidden bg-twitter-background"
       >
         <LeftMenu inSheetContext={true} />
       </SheetContent>

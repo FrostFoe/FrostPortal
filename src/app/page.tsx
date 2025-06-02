@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { TopBar } from "@/components/twitter/TopBar";
 import { LeftMenu } from "@/components/twitter/LeftMenu";
 import { TweetCard, type Tweet } from "@/components/twitter/TweetCard";
-import { Feather } from "lucide-react";
+import { Plus } from "lucide-react"; // Changed from Feather to Plus
 import { initialHomeTweets } from "@/contents/homeFeedData"; // Import data
 
 // Helper function to shuffle an array (Fisher-Yates shuffle)
@@ -50,7 +50,7 @@ export default function TwitterHomePage() {
             size="icon"
             aria-label="Compose Tweet"
           >
-            <Feather size={28} />
+            <Plus size={28} />
           </Button>
         </Link>
       </div>

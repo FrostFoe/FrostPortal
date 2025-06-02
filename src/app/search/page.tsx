@@ -8,6 +8,8 @@ import { LeftMenu } from "@/components/twitter/LeftMenu";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search as SearchIcon, Settings, Plus } from "lucide-react";
+// No specific page title metadata for client components in App Router by default,
+// title will be inherited from layout or set via TopBar if needed.
 
 export default function SearchPage() {
   return (
@@ -67,7 +69,7 @@ export default function SearchPage() {
       </div>
       <SheetContent
         side="left"
-        className="p-0 w-[280px] border-r-0 shadow-xl md:hidden bg-background"
+        className="p-0 w-[280px] border-r-0 shadow-xl md:hidden bg-twitter-background"
       >
         <LeftMenu inSheetContext={true} />
       </SheetContent>

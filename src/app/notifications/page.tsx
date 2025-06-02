@@ -13,6 +13,8 @@ import {
 import { Settings, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { initialNotificationsData } from "@/contents/notificationsData"; // Import data
+// No specific page title metadata for client components in App Router by default,
+// title will be inherited from layout or set via TopBar if needed.
 
 export default function NotificationsPage() {
   const [activeTab, setActiveTab] = useState<"all" | "mentions">("all");
@@ -74,7 +76,7 @@ export default function NotificationsPage() {
         {/* FAB hidden on medium screens and up */}
         <Link href="/compose/tweet" passHref className="md:hidden">
           <Button
-            className="fixed bottom-20 right-4 h-14 w-14 rounded-full text-white shadow-[0px_2px_6px_rgba(0,0,0,0.2)] hover:opacity-90 z-50"
+            className="fixed bottom-20 right-4 h-14 w-14 rounded-full text-white shadow-[0px_2px_6px_rgba(0,0,0,0.2)] hover:opacity-90 z-50 bg-twitter-primary"
             size="icon"
             aria-label="Compose Action"
           >
@@ -84,7 +86,7 @@ export default function NotificationsPage() {
       </div>
       <SheetContent
         side="left"
-        className="p-0 w-[280px] border-r-0 shadow-xl md:hidden"
+        className="p-0 w-[280px] bg-twitter-background border-r-0 shadow-xl md:hidden"
       >
         <LeftMenu inSheetContext={true} />
       </SheetContent>

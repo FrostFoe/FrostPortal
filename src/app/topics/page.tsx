@@ -1,7 +1,13 @@
+
 import { TopBar } from "@/components/twitter/TopBar";
 // BottomNav is now global
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { LeftMenu } from "@/components/twitter/LeftMenu";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Topics",
+};
 
 export default function TopicsPage() {
   return (

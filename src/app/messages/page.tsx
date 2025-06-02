@@ -1,3 +1,4 @@
+
 "use client";
 import { TopBar } from "@/components/twitter/TopBar";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -6,6 +7,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import { directMessagesData, type Message } from "@/contents/messagesData"; // Import data
+// No specific page title metadata for client components in App Router by default,
+// title will be inherited from layout or set via TopBar if needed.
 
 export default function MessagesPage() {
   const messages: Message[] = directMessagesData;

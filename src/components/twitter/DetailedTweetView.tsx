@@ -114,34 +114,34 @@ export function DetailedTweetView({ tweet }: DetailedTweetViewProps) {
         <Button
           variant="ghost"
           size="icon"
-          className="text-twitter-text-secondary hover:text-twitter-primary rounded-full w-10 h-10"
+          className="text-twitter-text-secondary hover:text-twitter-primary rounded-full w-10 h-10 group"
           aria-label="Reply"
         >
-          <MessageCircle size={22} />
+          <MessageCircle size={22} className="transform group-hover:scale-110 transition-transform duration-150 ease-in-out" />
         </Button>
         <Button
           variant="ghost"
           size="icon"
-          className="text-twitter-text-secondary hover:text-twitter-retweet rounded-full w-10 h-10"
+          className="text-twitter-text-secondary hover:text-twitter-retweet rounded-full w-10 h-10 group"
           aria-label="Retweet"
         >
-          <Repeat2 size={22} />
+          <Repeat2 size={22} className="transform group-hover:scale-110 transition-transform duration-150 ease-in-out" />
         </Button>
         <Button
           variant="ghost"
           size="icon"
-          className="text-twitter-text-secondary hover:text-twitter-like rounded-full w-10 h-10"
+          className="text-twitter-text-secondary hover:text-twitter-like rounded-full w-10 h-10 group"
           aria-label="Like"
         >
-          <Heart size={22} />
+          <Heart size={22} className="transform group-hover:scale-110 transition-transform duration-150 ease-in-out" />
         </Button>
         <Button
           variant="ghost"
           size="icon"
-          className="text-twitter-text-secondary hover:text-twitter-primary rounded-full w-10 h-10"
+          className="text-twitter-text-secondary hover:text-twitter-primary rounded-full w-10 h-10 group"
           aria-label="Share"
         >
-          <Share size={22} />
+          <Share size={22} className="transform group-hover:scale-110 transition-transform duration-150 ease-in-out" />
         </Button>
       </div>
     </article>

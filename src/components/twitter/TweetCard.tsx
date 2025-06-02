@@ -102,11 +102,11 @@ const TweetCardComponent: React.FC<TweetCardProps> = ({ tweet }) => {
             <Button
               variant="ghost"
               size="sm"
-              className="flex items-center space-x-1 p-1 hover:text-twitter-primary"
+              className="flex items-center space-x-1 p-1 hover:text-twitter-primary group"
               onClick={handleActionClick}
               aria-label="Reply"
             >
-              <MessageCircle size={18} />
+              <MessageCircle size={18} className="transform group-hover:scale-110 transition-transform duration-150 ease-in-out" />
               <span className="text-13px">
                 {tweet.replyCount > 0 ? tweet.replyCount : ""}
               </span>
@@ -114,31 +114,31 @@ const TweetCardComponent: React.FC<TweetCardProps> = ({ tweet }) => {
             <Button
               variant="ghost"
               size="sm"
-              className={`flex items-center space-x-1 p-1 ${isRetweeted ? "text-twitter-retweet" : "hover:text-twitter-retweet"}`}
+              className={`flex items-center space-x-1 p-1 group ${isRetweeted ? "text-twitter-retweet" : "hover:text-twitter-retweet"}`}
               onClick={handleRetweet}
               aria-label="Retweet"
             >
-              <Repeat2 size={18} />
+              <Repeat2 size={18} className="transform group-hover:scale-110 transition-transform duration-150 ease-in-out" />
               <span className="text-13px">{retweets > 0 ? retweets : ""}</span>
             </Button>
             <Button
               variant="ghost"
               size="sm"
-              className={`flex items-center space-x-1 p-1 ${isLiked ? "text-twitter-like" : "hover:text-twitter-like"}`}
+              className={`flex items-center space-x-1 p-1 group ${isLiked ? "text-twitter-like" : "hover:text-twitter-like"}`}
               onClick={handleLike}
               aria-label="Like"
             >
-              <Heart size={18} className={isLiked ? "fill-twitter-like" : ""} />
+              <Heart size={18} className={`${isLiked ? "fill-twitter-like" : ""} transform group-hover:scale-110 transition-transform duration-150 ease-in-out`} />
               <span className="text-13px">{likes > 0 ? likes : ""}</span>
             </Button>
             <Button
               variant="ghost"
               size="sm"
-              className="flex items-center space-x-1 p-1 hover:text-twitter-primary"
+              className="flex items-center space-x-1 p-1 hover:text-twitter-primary group"
               onClick={handleActionClick}
               aria-label="Share"
             >
-              <Share size={18} />
+              <Share size={18} className="transform group-hover:scale-110 transition-transform duration-150 ease-in-out" />
             </Button>
           </div>
         </div>

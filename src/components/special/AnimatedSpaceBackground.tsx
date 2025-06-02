@@ -31,14 +31,14 @@ const AnimatedSpaceBackground: React.FC = () => {
           id: i,
           top: `${Math.random() * 100}%`,
           left: `${Math.random() * 100}%`,
-          size: Math.random() * 2 + 0.5, // Star size: 0.5px to 2.5px
-          initialOpacity: Math.random() * 0.5 + 0.5, // Star opacity: 0.5 to 1.0 for better visibility
-          twinkleDuration: `${Math.random() * 5 + 3}s`, // Animation duration: 3s to 8s
-          twinkleDelay: `${Math.random() * 5}s`, // Animation delay: 0s to 5s
-          driftX: (Math.random() - 0.5) * 150, // Horizontal drift: -75px to 75px
-          driftY: (Math.random() - 0.5) * 150, // Vertical drift: -75px to 75px
-          driftDuration: `${Math.random() * 40 + 30}s`, // Drift duration: 30s to 70s
-          driftDelay: `${Math.random() * 10}s`,
+          size: Math.random() * 2.5 + 0.5, // Star size: 0.5px to 3px (increased range)
+          initialOpacity: Math.random() * 0.6 + 0.4, // Star opacity: 0.4 to 1.0 (slightly brighter minimum)
+          twinkleDuration: `${Math.random() * 7 + 4}s`, // Animation duration: 4s to 11s (increased variation)
+          twinkleDelay: `${Math.random() * 6}s`, // Animation delay: 0s to 6s (increased variation)
+          driftX: (Math.random() - 0.5) * 200, // Horizontal drift: -100px to 100px (increased range)
+          driftY: (Math.random() - 0.5) * 200, // Vertical drift: -100px to 100px (increased range)
+          driftDuration: `${Math.random() * 60 + 40}s`, // Drift duration: 40s to 100s (increased variation)
+          driftDelay: `${Math.random() * 15}s`,  // Increased delay variation
         });
       }
       setStars(newStars);
@@ -64,9 +64,9 @@ const AnimatedSpaceBackground: React.FC = () => {
               twinkle ${star.twinkleDuration} ${star.twinkleDelay} infinite ease-in-out,
               drift ${star.driftDuration} ${star.driftDelay} infinite linear alternate
             `,
-            ['--star-target-opacity' as string]: star.initialOpacity,
-            ['--driftX'as string]: `${star.driftX}px`,
-            ['--driftY'as string]: `${star.driftY}px`,
+            '--star-target-opacity': star.initialOpacity,
+            '--driftX': `${star.driftX}px`,
+            '--driftY': `${star.driftY}px`,
           } as React.CSSProperties}
         />
       ))}

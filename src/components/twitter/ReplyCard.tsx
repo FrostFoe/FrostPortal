@@ -122,9 +122,9 @@ const ReplyCardComponent: React.FC<ReplyCardProps> = ({
           <Button
             variant="ghost"
             size="sm"
-            className="flex items-center space-x-1 p-1 hover:text-twitter-primary rounded-full"
+            className="flex items-center space-x-1 p-1 hover:text-twitter-primary rounded-full group"
           >
-            <MessageCircle size={18} />
+            <MessageCircle size={18} className="transform group-hover:scale-110 transition-transform duration-150 ease-in-out" />
             <span className="text-13px">
               {reply.replyCount > 0 ? reply.replyCount : ""}
             </span>
@@ -132,9 +132,9 @@ const ReplyCardComponent: React.FC<ReplyCardProps> = ({
           <Button
             variant="ghost"
             size="sm"
-            className="flex items-center space-x-1 p-1 hover:text-twitter-retweet rounded-full"
+            className="flex items-center space-x-1 p-1 hover:text-twitter-retweet rounded-full group"
           >
-            <Repeat2 size={18} />
+            <Repeat2 size={18} className="transform group-hover:scale-110 transition-transform duration-150 ease-in-out" />
             <span className="text-13px">
               {reply.retweetCount > 0 ? reply.retweetCount : ""}
             </span>
@@ -142,9 +142,9 @@ const ReplyCardComponent: React.FC<ReplyCardProps> = ({
           <Button
             variant="ghost"
             size="sm"
-            className="flex items-center space-x-1 p-1 hover:text-twitter-like rounded-full"
+            className="flex items-center space-x-1 p-1 hover:text-twitter-like rounded-full group"
           >
-            <Heart size={18} /> {/* Add fill logic if needed */}
+            <Heart size={18} className="transform group-hover:scale-110 transition-transform duration-150 ease-in-out" /> {/* Add fill logic if needed */}
             <span className="text-13px">
               {reply.likeCount > 0 ? reply.likeCount : ""}
             </span>
@@ -152,9 +152,9 @@ const ReplyCardComponent: React.FC<ReplyCardProps> = ({
           <Button
             variant="ghost"
             size="sm"
-            className="flex items-center space-x-1 p-1 hover:text-twitter-primary rounded-full"
+            className="flex items-center space-x-1 p-1 hover:text-twitter-primary rounded-full group"
           >
-            <Share size={18} />
+            <Share size={18} className="transform group-hover:scale-110 transition-transform duration-150 ease-in-out" />
           </Button>
         </div>
       </div>

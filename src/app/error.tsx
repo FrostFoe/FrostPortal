@@ -1,5 +1,5 @@
 
-"use client"; // Error components must be Client Components
+"use client"; 
 
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
@@ -12,7 +12,7 @@ export default function Error({
   reset: () => void;
 }) {
   useEffect(() => {
-    // Log the error to an error reporting service
+    
     console.error(error);
   }, [error]);
 
@@ -26,7 +26,7 @@ export default function Error({
       </p>
       <Button
         onClick={
-          // Attempt to recover by trying to re-render the segment
+          
           () => reset()
         }
         className="bg-primary text-primary-foreground hover:opacity-90"

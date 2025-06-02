@@ -20,7 +20,7 @@ import {
 import {
   mediaPreviewItemsData,
   userComposeAvatar,
-} from "@/contents/composeData"; // Import data
+} from "@/contents/composeData"; 
 
 export default function ComposeTweetPage() {
   const [tweetText, setTweetText] = useState("");
@@ -28,7 +28,7 @@ export default function ComposeTweetPage() {
 
   return (
     <div className="flex flex-col h-screen text-twitter-text-primary overflow-hidden bg-transparent">
-      {/* Top Bar */}
+      
       <div className="flex items-center justify-between p-3 border-b border-twitter-divider">
         <Link href="/" passHref>
           <Button
@@ -46,7 +46,7 @@ export default function ComposeTweetPage() {
         </Button>
       </div>
 
-      {/* Tweet Input Area */}
+      
       <div className="flex-grow flex p-3 space-x-3 overflow-y-auto">
         <Avatar className="h-10 w-10 flex-shrink-0">
           <AvatarImage
@@ -66,7 +66,7 @@ export default function ComposeTweetPage() {
         />
       </div>
 
-      {/* Media Preview (optional, appears above keyboard/toolbar) */}
+      
       <div className="px-3 pb-2 border-b border-twitter-divider">
         <div className="flex space-x-2 overflow-x-auto">
           <button className="flex-shrink-0 h-20 w-20 rounded-lg flex items-center justify-center text-twitter-primary bg-transparent border border-twitter-divider hover:bg-twitter-primary/10" aria-label="Add media from camera">
@@ -90,7 +90,7 @@ export default function ComposeTweetPage() {
         </div>
       </div>
 
-      {/* Bottom Toolbar */}
+      
       <div className="flex items-center justify-between p-3 border-t border-twitter-divider">
         <div className="flex items-center space-x-5">
           <button className="text-twitter-primary hover:text-twitter-primary/80" aria-label="Add image or video">
@@ -109,7 +109,7 @@ export default function ComposeTweetPage() {
         <div className="flex items-center space-x-2">
           <div className="relative h-6 w-6">
             <Circle size={24} className="text-twitter-primary/30" />
-            {/* This is a simplified progress circle. A real one would be more complex. */}
+            
           </div>
           <div className="h-6 w-px bg-twitter-divider"></div>
           <button className="text-twitter-primary hover:text-twitter-primary/80" aria-label="Add tweet">

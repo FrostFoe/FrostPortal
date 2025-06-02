@@ -19,8 +19,8 @@ export interface Tweet {
   replyCount: number;
   retweetCount: number;
   likeCount: number;
-  data_ai_hint?: string; // For the main image
-  avatar_data_ai_hint?: string; // For the avatar
+  data_ai_hint?: string; 
+  avatar_data_ai_hint?: string; 
 }
 
 interface TweetCardProps {
@@ -34,14 +34,14 @@ const TweetCardComponent: React.FC<TweetCardProps> = ({ tweet }) => {
   const [retweets, setRetweets] = useState(tweet.retweetCount);
 
   const handleLike = (e: React.MouseEvent) => {
-    e.preventDefault(); // Prevent link navigation when liking
+    e.preventDefault(); 
     e.stopPropagation();
     setIsLiked(!isLiked);
     setLikes(isLiked ? likes - 1 : likes + 1);
   };
 
   const handleRetweet = (e: React.MouseEvent) => {
-    e.preventDefault(); // Prevent link navigation when retweeting
+    e.preventDefault(); 
     e.stopPropagation();
     setIsRetweeted(!isRetweeted);
     setRetweets(isRetweeted ? retweets - 1 : retweets + 1);
@@ -50,7 +50,7 @@ const TweetCardComponent: React.FC<TweetCardProps> = ({ tweet }) => {
   const handleActionClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    // Add specific action logic if needed, for now just stops propagation
+    
   };
 
   return (
@@ -59,7 +59,7 @@ const TweetCardComponent: React.FC<TweetCardProps> = ({ tweet }) => {
       passHref
       className="block hover:bg-slate-50/5 dark:hover:bg-slate-800/20 transition-colors duration-150"
     >
-      <article className="flex space-x-3 p-4 border-b border-twitter-divider font-system cursor-pointer">
+      <article className="flex space-x-3 p-4 border-b border-twitter-divider font-system cursor-pointer bg-transparent">
         <Avatar className="h-12 w-12 flex-shrink-0">
           <AvatarImage
             src={tweet.avatarUrl}

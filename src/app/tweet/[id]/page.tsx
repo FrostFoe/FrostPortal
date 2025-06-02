@@ -9,14 +9,14 @@ import { Button } from "@/components/ui/button";
 import {
   mainTweetDetailData,
   repliesForTweetData,
-} from "@/contents/tweetDetailsData"; // Import data
+} from "@/contents/tweetDetailsData"; 
 
 export default function TweetDetailPage({
   params,
 }: {
   params: { id: string };
 }) {
-  // In a real app, you would fetch tweet data based on params.id
+  
   const currentTweet = mainTweetDetailData;
   const currentReplies = repliesForTweetData;
 

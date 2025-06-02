@@ -27,7 +27,7 @@ export function BottomNav() {
     { href: "/spaces", icon: Podcast, label: "Spaces" },
   ];
 
-  // md:hidden will hide this component on medium screens and larger
+  
   return (
     <nav className="fixed bottom-0 left-0 right-0 h-14 border-t border-twitter-divider flex items-center justify-around font-system max-w-md mx-auto z-50 md:hidden bg-transparent">
       {navItems.map((item) => {

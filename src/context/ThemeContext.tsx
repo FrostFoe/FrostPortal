@@ -23,7 +23,7 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const [theme, setTheme] = useState<Theme>("dark"); // Default to dark
+  const [theme, setTheme] = useState<Theme>("dark"); 
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme") as Theme | null;
@@ -35,7 +35,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
         document.documentElement.classList.remove("dark");
       }
     } else {
-      // If no stored theme, ensure 'dark' class is set if default is dark
+      
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
     }

@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { BadgeCheck, Heart } from "lucide-react"; // Example icon
+import { BadgeCheck, Heart } from "lucide-react"; 
 
 export interface NotificationItem {
   id: string;
@@ -9,18 +9,18 @@ export interface NotificationItem {
   userName: string;
   isVerified?: boolean;
   timestamp: string;
-  source?: string; // e.g., "Liked your tweet", "Followed you"
-  contentPreview?: string; // e.g., the tweet text that was liked
-  mainText: string; // Formatted text with potential bolds/links
-  iconType?: "like" | "follow" | "mention" | "reply"; // To show specific icon for notification type
-  data_ai_hint?: string; // For avatar image
+  source?: string; 
+  contentPreview?: string; 
+  mainText: string; 
+  iconType?: "like" | "follow" | "mention" | "reply"; 
+  data_ai_hint?: string; 
 }
 
 interface NotificationItemCardProps {
   notification: NotificationItem;
 }
 
-// Helper to parse basic markdown-like formatting for demo
+
 const FormattedText: React.FC<{ text: string }> = ({ text }) => {
   const parts = text
     .split(/(\*\*.*?\*\*|##.*?##|@@.*?@@)/g)
@@ -36,7 +36,7 @@ const FormattedText: React.FC<{ text: string }> = ({ text }) => {
           );
         }
         if (part.startsWith("##") && part.endsWith("##")) {
-          // For hashtags
+          
           return (
             <span key={index} className="text-twitter-primary">
               {part.substring(2, part.length - 2)}
@@ -44,7 +44,7 @@ const FormattedText: React.FC<{ text: string }> = ({ text }) => {
           );
         }
         if (part.startsWith("@@") && part.endsWith("@@")) {
-          // For links
+          
           return (
             <span key={index} className="text-twitter-primary underline">
               {part.substring(2, part.length - 2)}
@@ -61,12 +61,12 @@ const NotificationItemCardComponent: React.FC<NotificationItemCardProps> = ({
   notification,
 }) => {
   return (
-    <div className="flex space-x-3 p-4 border-b border-twitter-divider transition-colors duration-150">
+    <div className="flex space-x-3 p-4 border-b border-twitter-divider transition-colors duration-150 bg-transparent">
       <div className="w-8 flex justify-end pt-1">
         {notification.iconType === "like" && (
           <Heart size={20} className="text-twitter-like fill-current" />
         )}
-        {/* Add other icons for follow, mention, reply here */}
+        
       </div>
       <div className="flex-1">
         <Avatar className="h-8 w-8 mb-1">

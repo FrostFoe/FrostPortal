@@ -10,14 +10,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "text-primary-foreground hover:opacity-90",
+        default: "bg-transparent text-primary-foreground hover:opacity-90",
         destructive:
-          "text-destructive-foreground hover:opacity-90",
+          "bg-transparent text-destructive-foreground hover:opacity-90",
         outline:
-          "border border-input hover:text-accent-foreground",
+          "border border-input bg-transparent hover:text-accent-foreground",
         secondary:
-          "text-secondary-foreground hover:opacity-80",
-        ghost: "hover:text-accent-foreground",
+          "bg-transparent text-secondary-foreground hover:opacity-80",
+        ghost: "hover:bg-transparent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {

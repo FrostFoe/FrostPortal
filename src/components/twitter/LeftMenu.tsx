@@ -11,23 +11,23 @@ import {
   List,
   Hash,
   Bookmark,
-  Zap, // Moments
+  Zap, 
   Settings,
   HelpCircle,
   Sun,
   QrCode,
   Moon,
-  Feather, // For Tweet button
-  Home,    // Added
-  Search,  // Added (for Explore)
-  Bell,    // Added
-  Mail,    // Added
-  Podcast, // Added (for Spaces)
-  Bird,    // Added (for Logo)
+  Feather, 
+  Home,    
+  Search,  
+  Bell,    
+  Mail,    
+  Podcast, 
+  Bird,    
 } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 import React from "react";
-import { currentUser } from "@/contents/userData"; // Import data
+import { currentUser } from "@/contents/userData"; 
 
 const mainMenuItems = [
   { href: "/", label: "Home", icon: Home },
@@ -68,7 +68,7 @@ export function LeftMenu({ inSheetContext = false }: LeftMenuProps) {
 
   return (
     <div className="flex flex-col h-full text-twitter-text-primary font-system bg-transparent">
-      {/* Logo for desktop */}
+      
       <div className="p-3 hidden md:block">
         <Link href="/" passHref>
           <Button variant="ghost" size="icon" className="h-12 w-12 rounded-full hover:bg-twitter-primary/10" aria-label="Home">
@@ -77,7 +77,7 @@ export function LeftMenu({ inSheetContext = false }: LeftMenuProps) {
         </Link>
       </div>
 
-      {/* User Info - only in Sheet context (mobile) for this condensed version */}
+      
       {inSheetContext && (
          <div className="p-4 space-y-2 border-b border-twitter-divider">
             <Avatar className="h-12 w-12">
@@ -127,8 +127,8 @@ export function LeftMenu({ inSheetContext = false }: LeftMenuProps) {
         {!inSheetContext && (
           <div className="px-3 mt-4 hidden md:block">
             <Link href="/compose/tweet" passHref>
-              <Button className="text-white rounded-full h-12 w-full font-bold text-lg bg-twitter-primary hover:bg-twitter-primary/90">
-                <Feather size={20} className="mr-2 hidden" /> {/* Icon mostly for mobile consistency, can hide on desktop text button */}
+              <Button className="text-white rounded-full h-12 w-full font-bold text-lg bg-twitter-primary hover:bg-twitter-primary/90" aria-label="Compose Tweet">
+                <Feather size={20} className="mr-2 hidden" /> 
                 <span>Tweet</span>
               </Button>
             </Link>
@@ -136,7 +136,7 @@ export function LeftMenu({ inSheetContext = false }: LeftMenuProps) {
         )}
       </nav>
 
-      {/* User account popover for desktop - placed at the bottom */}
+      
       {!inSheetContext && (
         <div className="mt-auto p-3 border-t border-twitter-divider">
            <Button variant="ghost" className="w-full justify-start h-16 text-left p-2 rounded-full hover:bg-twitter-primary/10" aria-label="Account menu">
@@ -152,13 +152,13 @@ export function LeftMenu({ inSheetContext = false }: LeftMenuProps) {
                 <p className="font-bold text-sm text-twitter-text-primary">{currentUser.name}</p>
                 <p className="text-xs text-twitter-text-secondary">@{currentUser.handle}</p>
             </div>
-            {/* Add DotsHorizontalIcon or similar for popover trigger if needed */}
+            
            </Button>
         </div>
       )}
 
 
-      {/* Mobile Sheet Specific Footer */}
+      
       {inSheetContext && (
         <>
           <Separator className="my-2 bg-twitter-divider" />
@@ -196,7 +196,7 @@ export function LeftMenu({ inSheetContext = false }: LeftMenuProps) {
         </>
       )}
 
-      {/* Desktop Fixed Sidebar Footer - Settings and Help are now part of main nav or could be in a "More" popover */}
+      
        {!inSheetContext && !mainMenuItems.find(item => item.href === "/settings") && (
         <div className={`mt-auto p-3 ${inSheetContext ? "" : "border-t border-twitter-divider"}`}>
           {bottomMenuItems.map(item => (
@@ -209,7 +209,7 @@ export function LeftMenu({ inSheetContext = false }: LeftMenuProps) {
                 </Button>
             </Link>
           ))}
-          {/* Desktop theme toggle could go here or in a user popover */}
+          
             <Button
               variant="ghost"
               onClick={toggleTheme}

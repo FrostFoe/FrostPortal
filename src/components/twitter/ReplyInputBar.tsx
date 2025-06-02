@@ -3,11 +3,11 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
-import { currentUser } from "@/contents/userData"; // Import current user data
+import { currentUser } from "@/contents/userData"; 
 
 export function ReplyInputBar() {
   return (
-    <div className="fixed bottom-14 left-0 right-0 p-3 border-t border-twitter-divider flex items-center space-x-3 max-w-md mx-auto z-40 md:hidden">
+    <div className="fixed bottom-14 left-0 right-0 p-3 border-t border-twitter-divider flex items-center space-x-3 max-w-md mx-auto z-40 md:hidden bg-transparent">
       <Avatar className="h-8 w-8">
         <AvatarImage
           src={currentUser.avatarUrl}

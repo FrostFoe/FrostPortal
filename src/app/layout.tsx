@@ -32,19 +32,19 @@ export default function RootLayout({
           <div className="min-h-screen relative">
             <AnimatedSpaceBackground />
             <div className="container mx-auto flex relative z-0">
-              {/* Left Sidebar - Desktop */}
+              
               <aside className="hidden md:flex w-[275px] flex-shrink-0 border-r border-twitter-divider bg-transparent">
                 <div className="fixed h-full w-[275px] overflow-y-auto p-3">
                   <LeftMenu />
                 </div>
               </aside>
 
-              {/* Center Column (Main Content) */}
+              
               <main className="w-full md:max-w-[600px] min-h-screen border-r border-l border-twitter-divider bg-transparent">
                 {children}
               </main>
 
-              {/* Right Sidebar - Desktop */}
+              
               <aside className="hidden lg:flex w-[350px] flex-shrink-0 bg-transparent">
                 <div className="fixed h-full w-[350px] overflow-y-auto p-3 border-l border-twitter-divider">
                   <RightSidebar />

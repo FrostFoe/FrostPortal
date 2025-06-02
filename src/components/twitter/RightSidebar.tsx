@@ -12,7 +12,7 @@ import { trendsData, whoToFollowData } from "@/contents/sidebarData";
 export function RightSidebar() {
   return (
     <div className="space-y-4 p-1 bg-transparent">
-      {/* Search Bar */}
+      
       <div className="sticky top-0 py-2 z-10 bg-transparent">
         <div className="relative flex items-center">
           <SearchIcon className="absolute left-3 h-5 w-5 text-twitter-icon-gray" />
@@ -24,7 +24,7 @@ export function RightSidebar() {
         </div>
       </div>
 
-      {/* Trends for you */}
+      
       <Card className="border-twitter-divider rounded-xl bg-transparent">
         <CardHeader className="pb-2">
           <CardTitle className="text-xl font-bold text-twitter-text-primary flex justify-between items-center">
@@ -34,7 +34,7 @@ export function RightSidebar() {
               size="icon"
               className="h-8 w-8 text-twitter-primary"
               aria-label="Trending settings"
-              onClick={() => { /* Placeholder for settings action */ }}
+              onClick={() => {  }}
             >
               <Settings size={20} />
             </Button>
@@ -67,7 +67,7 @@ export function RightSidebar() {
         </CardContent>
       </Card>
 
-      {/* Who to follow */}
+      
       <Card className="border-twitter-divider rounded-xl bg-transparent">
         <CardHeader className="pb-2">
           <CardTitle className="text-xl font-bold text-twitter-text-primary">

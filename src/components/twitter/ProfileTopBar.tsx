@@ -13,7 +13,7 @@ export function ProfileTopBar({ title }: ProfileTopBarProps) {
   const router = useRouter();
 
   return (
-    <div className="h-14 backdrop-blur-md text-twitter-text-primary px-2 flex items-center sticky top-0 z-40 border-b border-twitter-divider">
+    <div className="h-14 backdrop-blur-md text-twitter-text-primary px-2 flex items-center sticky top-0 z-40 border-b border-twitter-divider bg-transparent">
       <Button
         variant="ghost"
         size="icon"
@@ -27,7 +27,7 @@ export function ProfileTopBar({ title }: ProfileTopBarProps) {
         {title}
       </h1>
 
-      {/* Placeholder for potential right-side actions if needed in future */}
+      
       <div className="w-10 ml-auto"></div>
     </div>
   );

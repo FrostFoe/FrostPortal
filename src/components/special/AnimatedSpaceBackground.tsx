@@ -18,7 +18,7 @@ interface Star {
   driftDelay: string;
 }
 
-const NUM_STARS = 100; // Adjust number of stars for performance/density
+const NUM_STARS = 100; 
 
 const AnimatedSpaceBackground: React.FC = () => {
   const [stars, setStars] = useState<Star[]>([]);
@@ -31,14 +31,14 @@ const AnimatedSpaceBackground: React.FC = () => {
           id: i,
           top: `${Math.random() * 100}%`,
           left: `${Math.random() * 100}%`,
-          size: Math.random() * 2.5 + 0.5, // Star size: 0.5px to 3px (increased range)
-          initialOpacity: Math.random() * 0.6 + 0.4, // Star opacity: 0.4 to 1.0 (slightly brighter minimum)
-          twinkleDuration: `${Math.random() * 7 + 4}s`, // Animation duration: 4s to 11s (increased variation)
-          twinkleDelay: `${Math.random() * 6}s`, // Animation delay: 0s to 6s (increased variation)
-          driftX: (Math.random() - 0.5) * 200, // Horizontal drift: -100px to 100px (increased range)
-          driftY: (Math.random() - 0.5) * 200, // Vertical drift: -100px to 100px (increased range)
-          driftDuration: `${Math.random() * 60 + 40}s`, // Drift duration: 40s to 100s (increased variation)
-          driftDelay: `${Math.random() * 15}s`,  // Increased delay variation
+          size: Math.random() * 2.5 + 0.5, 
+          initialOpacity: Math.random() * 0.7 + 0.5, 
+          twinkleDuration: `${Math.random() * 7 + 4}s`, 
+          twinkleDelay: `${Math.random() * 6}s`, 
+          driftX: (Math.random() - 0.5) * 200, 
+          driftY: (Math.random() - 0.5) * 200, 
+          driftDuration: `${Math.random() * 60 + 40}s`, 
+          driftDelay: `${Math.random() * 15}s`,  
         });
       }
       setStars(newStars);

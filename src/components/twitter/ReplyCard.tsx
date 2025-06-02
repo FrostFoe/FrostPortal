@@ -15,15 +15,15 @@ export interface ReplyType {
     avatarUrl: string;
     avatar_data_ai_hint?: string;
   };
-  replyingTo: string; // e.g., "@karennne"
+  replyingTo: string; 
   content: string;
-  timestamp: string; // e.g., "2d"
+  timestamp: string; 
   replyCount: number;
   retweetCount: number;
   likeCount: number;
   imageAttachmentUrl?: string;
   image_data_ai_hint?: string;
-  isLastReply?: boolean; // To conditionally render the "1 more reply" or adjust connector line
+  isLastReply?: boolean; 
 }
 
 interface ReplyCardProps {
@@ -59,12 +59,10 @@ const ReplyCardComponent: React.FC<ReplyCardProps> = ({
   reply,
   showConnector,
 }) => {
-  // For interaction states, if needed
-  // const [isLiked, setIsLiked] = useState(false);
-  // const [likes, setLikes] = useState(reply.likeCount);
+  
 
   return (
-    <div className="flex space-x-3 px-4 pt-3 relative">
+    <div className="flex space-x-3 px-4 pt-3 relative bg-transparent">
       {showConnector && (
         <div className="absolute left-[34px] top-0 bottom-0 w-0.5 bg-twitter-divider -translate-x-1/2"></div>
       )}
@@ -74,7 +72,7 @@ const ReplyCardComponent: React.FC<ReplyCardProps> = ({
         )}
         <Avatar className="h-10 w-10">
           {" "}
-          {/* Smaller avatar for replies as per some designs, check image */}
+          
           <AvatarImage
             src={reply.user.avatarUrl}
             alt={reply.user.name}
@@ -123,6 +121,7 @@ const ReplyCardComponent: React.FC<ReplyCardProps> = ({
             variant="ghost"
             size="sm"
             className="flex items-center space-x-1 p-1 hover:text-twitter-primary rounded-full group"
+            aria-label="Reply"
           >
             <MessageCircle size={18} className="transform group-hover:scale-110 transition-transform duration-150 ease-in-out" />
             <span className="text-13px">
@@ -133,6 +132,7 @@ const ReplyCardComponent: React.FC<ReplyCardProps> = ({
             variant="ghost"
             size="sm"
             className="flex items-center space-x-1 p-1 hover:text-twitter-retweet rounded-full group"
+            aria-label="Retweet"
           >
             <Repeat2 size={18} className="transform group-hover:scale-110 transition-transform duration-150 ease-in-out" />
             <span className="text-13px">
@@ -143,8 +143,9 @@ const ReplyCardComponent: React.FC<ReplyCardProps> = ({
             variant="ghost"
             size="sm"
             className="flex items-center space-x-1 p-1 hover:text-twitter-like rounded-full group"
+            aria-label="Like"
           >
-            <Heart size={18} className="transform group-hover:scale-110 transition-transform duration-150 ease-in-out" /> {/* Add fill logic if needed */}
+            <Heart size={18} className="transform group-hover:scale-110 transition-transform duration-150 ease-in-out" /> 
             <span className="text-13px">
               {reply.likeCount > 0 ? reply.likeCount : ""}
             </span>
@@ -153,6 +154,7 @@ const ReplyCardComponent: React.FC<ReplyCardProps> = ({
             variant="ghost"
             size="sm"
             className="flex items-center space-x-1 p-1 hover:text-twitter-primary rounded-full group"
+            aria-label="Share"
           >
             <Share size={18} className="transform group-hover:scale-110 transition-transform duration-150 ease-in-out" />
           </Button>

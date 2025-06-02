@@ -6,9 +6,8 @@ import { LeftMenu } from "@/components/twitter/LeftMenu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
-import { directMessagesData, type Message } from "@/contents/messagesData"; // Import data
-// No specific page title metadata for client components in App Router by default,
-// title will be inherited from layout or set via TopBar if needed.
+import { directMessagesData, type Message } from "@/contents/messagesData"; 
+
 
 export default function MessagesPage() {
   const messages: Message[] = directMessagesData;
@@ -16,7 +15,7 @@ export default function MessagesPage() {
   return (
     <Sheet>
       {" "}
-      {/* Sheet for mobile LeftMenu */}
+      
       <div className="flex flex-col min-h-screen">
         <TopBar title="Messages" />
         <div className="p-2 border-b border-twitter-divider">

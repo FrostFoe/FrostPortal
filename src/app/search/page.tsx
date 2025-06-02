@@ -8,25 +8,24 @@ import { LeftMenu } from "@/components/twitter/LeftMenu";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search as SearchIcon, Settings, Plus } from "lucide-react";
-// No specific page title metadata for client components in App Router by default,
-// title will be inherited from layout or set via TopBar if needed.
+
 
 export default function SearchPage() {
   return (
     <Sheet>
       {" "}
-      {/* Sheet for mobile LeftMenu */}
+      
       <div className="flex flex-col min-h-screen bg-transparent">
-        {/* Hide TopBar on desktop if RightSidebar provides search */}
+        
         <div className="md:hidden">
           <TopBar
             title="Trends for you"
             rightActionIcon={Settings}
-            onRightActionClick={() => { /* Placeholder for settings action */ }}
+            onRightActionClick={() => {  }}
           />
         </div>
 
-        {/* Search input within page content on mobile, hidden on desktop if global search exists */}
+        
         <div className="p-3 border-b border-twitter-divider md:hidden">
           <div className="relative flex items-center">
             <SearchIcon className="absolute left-3 h-5 w-5 text-twitter-icon-gray" />
@@ -40,7 +39,7 @@ export default function SearchPage() {
         </div>
 
         <main className="flex-grow overflow-y-auto p-4 pb-16 flex flex-col justify-center items-center text-center">
-          {/* Desktop might show trends here directly, or rely on RightSidebar */}
+          
           <h2 className="text-xl font-bold text-twitter-text-primary mb-2">
             No new trends for you
           </h2>
@@ -50,13 +49,13 @@ export default function SearchPage() {
           </p>
           <Button
             className="text-white font-bold text-base rounded-full px-6 py-2 h-auto hover:opacity-90 bg-twitter-primary"
-            onClick={() => { /* Placeholder for change location action */ }}
+            onClick={() => {  }}
           >
             Change location
           </Button>
         </main>
 
-        {/* FAB hidden on medium screens and up */}
+        
         <Link href="/compose/tweet" passHref className="md:hidden">
           <Button
             className="fixed bottom-20 right-4 h-14 w-14 rounded-full text-white shadow-[0px_2px_6px_rgba(0,0,0,0.2)] hover:opacity-90 z-50 bg-twitter-primary"

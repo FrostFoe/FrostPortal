@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { TopBar } from "@/components/twitter/TopBar";
-// BottomNav is now global
+
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { LeftMenu } from "@/components/twitter/LeftMenu";
 import { Button } from "@/components/ui/button";
@@ -18,7 +18,7 @@ export default function SpacesPage() {
   return (
     <Sheet>
       {" "}
-      {/* Sheet for mobile LeftMenu */}
+      
       <div className="flex flex-col min-h-screen">
         <TopBar title="Spaces" />
         <main className="flex-grow overflow-y-auto p-4 pb-16 text-twitter-text-primary flex flex-col items-center justify-center">
@@ -39,7 +39,7 @@ export default function SpacesPage() {
             Explore Spaces
           </Button>
         </main>
-        {/* FAB hidden on medium screens and up */}
+        
         <Link href="/compose/tweet" passHref className="md:hidden">
           <Button
             asChild
@@ -50,7 +50,7 @@ export default function SpacesPage() {
             <Plus size={28} />
           </Button>
         </Link>
-        {/* BottomNav is now global */}
+        
       </div>
       <SheetContent
         side="left"

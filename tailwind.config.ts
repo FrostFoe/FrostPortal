@@ -18,7 +18,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        system: [ // Retained for specific Twitter-style text elements
+        system: [ 
           "-apple-system",
           "BlinkMacSystemFont",
           '"Segoe UI"',

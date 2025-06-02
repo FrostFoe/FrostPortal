@@ -12,24 +12,23 @@ import {
 } from "@/components/twitter/NotificationItemCard";
 import { Settings, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { initialNotificationsData } from "@/contents/notificationsData"; // Import data
-// No specific page title metadata for client components in App Router by default,
-// title will be inherited from layout or set via TopBar if needed.
+import { initialNotificationsData } from "@/contents/notificationsData"; 
+
 
 export default function NotificationsPage() {
   const [activeTab, setActiveTab] = useState<"all" | "mentions">("all");
-  // In a real app, notifications would likely be fetched or managed via a global state/context
+  
   const [notifications, setNotifications] = useState<NotificationItem[]>(
     initialNotificationsData,
   );
 
-  // Filter logic for tabs would go here if needed
+  
   const displayedNotifications = notifications;
 
   return (
     <Sheet>
       {" "}
-      {/* Sheet for mobile LeftMenu */}
+      
       <div className="flex flex-col min-h-screen">
         <TopBar
           title="Notifications"
@@ -73,7 +72,7 @@ export default function NotificationsPage() {
           )}
         </main>
 
-        {/* FAB hidden on medium screens and up */}
+        
         <Link href="/compose/tweet" passHref className="md:hidden">
           <Button
             className="fixed bottom-20 right-4 h-14 w-14 rounded-full text-white shadow-[0px_2px_6px_rgba(0,0,0,0.2)] hover:opacity-90 z-50 bg-twitter-primary"

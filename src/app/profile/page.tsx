@@ -12,9 +12,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { TweetCard, type Tweet } from "@/components/twitter/TweetCard";
 import { Feather, Link2, CalendarDays } from "lucide-react";
-import { userProfileData, profileTweetsData } from "@/contents/profileData"; // Import data
-// No specific page title metadata for client components in App Router by default,
-// title will be inherited from layout or set dynamically if needed.
+import { userProfileData, profileTweetsData } from "@/contents/profileData"; 
+
 
 type ProfileTab = "Tweets" | "Tweets & replies" | "Media" | "Likes";
 
@@ -28,7 +27,7 @@ export default function ProfilePage() {
   return (
     <Sheet>
       {" "}
-      {/* Sheet for mobile LeftMenu */}
+      
       <div className="flex flex-col min-h-screen">
         <ProfileTopBar title={userProfile.name} />
 
@@ -146,7 +145,7 @@ export default function ProfilePage() {
           </div>
         </main>
 
-        {/* FAB hidden on medium screens and up */}
+        
         <Link href="/compose/tweet" passHref>
           <Button
             className="fixed bottom-20 right-4 h-14 w-14 rounded-full text-white shadow-[0px_2px_6px_rgba(0,0,0,0.2)] hover:opacity-90 z-50 md:hidden bg-twitter-primary"

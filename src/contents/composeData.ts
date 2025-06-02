@@ -1,5 +1,5 @@
 export interface MediaPreviewItem {
-  type: "image"; // Can be extended for video, etc.
+  type: "image"; 
   src: string;
   alt: string;
   hint: string;

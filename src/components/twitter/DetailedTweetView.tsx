@@ -4,7 +4,7 @@
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Repeat2, Heart, Share, Repeat } from "lucide-react"; // Added Repeat for retweeted by icon
+import { MessageCircle, Repeat2, Heart, Share, Repeat } from "lucide-react"; 
 
 export interface DetailedTweetType {
   id: string;
@@ -16,8 +16,8 @@ export interface DetailedTweetType {
     avatar_data_ai_hint?: string;
   };
   content: string;
-  detailedTimestamp: string; // e.g., "09:28 · 2/21/20"
-  source: string; // e.g., "Twitter Web App"
+  detailedTimestamp: string; 
+  source: string; 
   retweetCount: number;
   likeCount: number;
   imageAttachmentUrl?: string;
@@ -29,12 +29,10 @@ interface DetailedTweetViewProps {
 }
 
 export function DetailedTweetView({ tweet }: DetailedTweetViewProps) {
-  // For interaction states, if needed in future
-  // const [isLiked, setIsLiked] = useState(false);
-  // const [likes, setLikes] = useState(tweet.likeCount);
+  
 
   return (
-    <article className="p-4 border-b border-twitter-divider font-system">
+    <article className="p-4 border-b border-twitter-divider font-system bg-transparent">
       {tweet.retweetedBy && (
         <div className="flex items-center text-xs text-twitter-text-secondary mb-2 ml-6">
           <Repeat size={14} className="mr-2" />
@@ -60,8 +58,8 @@ export function DetailedTweetView({ tweet }: DetailedTweetViewProps) {
             </span>
           </div>
         </div>
-        {/* Dropdown icon placeholder if needed */}
-        {/* <ChevronDown size={20} className="text-twitter-text-secondary" /> */}
+        
+        
       </div>
 
       <p className="text-twitter-text-primary text-xl mt-3 whitespace-pre-wrap">

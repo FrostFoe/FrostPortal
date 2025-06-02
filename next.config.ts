@@ -2,7 +2,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  swcMinify: true, // Explicitly enable SWC minification
+  swcMinify: true, 
   typescript: {
     ignoreBuildErrors: false,
   },
@@ -17,7 +17,7 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/**",
       },
-      { // Added for existing images in messagesData.ts
+      { 
         protocol: "https",
         hostname: "miro.medium.com",
       },
@@ -29,7 +29,7 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "i.pinimg.com",
       },
-      { // Added for current user avatar in userData.ts
+      { 
         protocol: "https",
         hostname: "upload.wikimedia.org",
       }

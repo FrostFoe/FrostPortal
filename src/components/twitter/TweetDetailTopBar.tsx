@@ -9,7 +9,7 @@ export function TweetDetailTopBar() {
   const router = useRouter();
 
   return (
-    <div className="h-14 text-twitter-text-primary px-2 flex items-center justify-between sticky top-0 z-40 border-b border-twitter-divider backdrop-blur-md">
+    <div className="h-14 text-twitter-text-primary px-2 flex items-center justify-between sticky top-0 z-40 border-b border-twitter-divider backdrop-blur-md bg-transparent">
       <Button
         variant="ghost"
         size="icon"
@@ -19,7 +19,7 @@ export function TweetDetailTopBar() {
         <ChevronLeft size={28} className="text-twitter-primary" />
       </Button>
       <h1 className="text-lg font-bold text-twitter-text-primary">Tweet</h1>
-      <div className="w-10"></div> {/* Placeholder for balance */}
+      <div className="w-10"></div> 
     </div>
   );
 }

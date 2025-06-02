@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState } from "react";
@@ -56,9 +57,9 @@ const TweetCardComponent: React.FC<TweetCardProps> = ({ tweet }) => {
     <Link
       href={`/tweet/${tweet.id}`}
       passHref
-      className="block hover:bg-slate-50/30 transition-colors duration-150"
+      className="block hover:bg-slate-50/30 dark:hover:bg-slate-800/20 transition-colors duration-150"
     >
-      <div className="flex space-x-3 p-4 border-b border-twitter-divider font-system bg-twitter-background cursor-pointer">
+      <div className="flex space-x-3 p-4 border-b border-twitter-divider font-system cursor-pointer">
         <Avatar className="h-12 w-12 flex-shrink-0">
           <AvatarImage
             src={tweet.avatarUrl}

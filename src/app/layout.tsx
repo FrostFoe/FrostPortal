@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import { LeftMenu } from "@/components/twitter/LeftMenu";
 import { RightSidebar } from "@/components/twitter/RightSidebar";
 import { BottomNav } from "@/components/twitter/BottomNav";
-import AnimatedSpaceBackground from "@/components/special/AnimatedSpaceBackground"; // Added import
+import AnimatedSpaceBackground from "@/components/special/AnimatedSpaceBackground";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -26,24 +26,23 @@ export default function RootLayout({
       <head></head>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider>
-          <div className="min-h-screen relative"> {/* Removed bg-*, added relative */}
-            <AnimatedSpaceBackground /> {/* Added animated background */}
-            {/* Content container, ensure it's above the background and columns have their own BG */}
-            <div className="container mx-auto flex relative z-0"> {/* z-0 or z-1 to ensure it's above z-[-1] bg */}
+          <div className="min-h-screen relative">
+            <AnimatedSpaceBackground />
+            <div className="container mx-auto flex relative z-0">
               {/* Left Sidebar - Desktop */}
-              <aside className="hidden md:flex w-[275px] flex-shrink-0 border-r border-twitter-divider bg-twitter-background"> {/* Added bg-twitter-background */}
+              <aside className="hidden md:flex w-[275px] flex-shrink-0 border-r border-twitter-divider"> {/* Removed bg-twitter-background */}
                 <div className="fixed h-full w-[275px] overflow-y-auto p-3">
                   <LeftMenu />
                 </div>
               </aside>
 
               {/* Center Column (Main Content) */}
-              <main className="w-full md:max-w-[600px] min-h-screen border-r border-l border-twitter-divider bg-twitter-background"> {/* Added bg-twitter-background */}
+              <main className="w-full md:max-w-[600px] min-h-screen border-r border-l border-twitter-divider"> {/* Removed bg-twitter-background */}
                 {children}
               </main>
 
               {/* Right Sidebar - Desktop */}
-              <aside className="hidden lg:flex w-[350px] flex-shrink-0 bg-twitter-background"> {/* Added bg-twitter-background */}
+              <aside className="hidden lg:flex w-[350px] flex-shrink-0"> {/* Removed bg-twitter-background */}
                 <div className="fixed h-full w-[350px] overflow-y-auto p-3 border-l border-twitter-divider">
                   <RightSidebar />
                 </div>

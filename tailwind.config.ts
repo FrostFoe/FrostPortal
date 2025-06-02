@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -17,10 +18,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ["Inter", "sans-serif"],
-        headline: ["Inter", "sans-serif"],
-        code: ["monospace"],
-        system: [
+        system: [ // Retained for specific Twitter-style text elements
           "-apple-system",
           "BlinkMacSystemFont",
           '"Segoe UI"',

@@ -34,7 +34,7 @@ export function DetailedTweetView({ tweet }: DetailedTweetViewProps) {
   // const [likes, setLikes] = useState(tweet.likeCount);
 
   return (
-    <div className="p-4 border-b border-twitter-divider font-system bg-transparent">
+    <article className="p-4 border-b border-twitter-divider font-system">
       {tweet.retweetedBy && (
         <div className="flex items-center text-xs text-twitter-text-secondary mb-2 ml-6">
           <Repeat size={14} className="mr-2" />
@@ -144,6 +144,6 @@ export function DetailedTweetView({ tweet }: DetailedTweetViewProps) {
           <Share size={22} />
         </Button>
       </div>
-    </div>
+    </article>
   );
 }

@@ -4,6 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { SheetTrigger } from "@/components/ui/sheet";
 import { Bird } from "lucide-react";
+import { currentUser } from "@/contents/userData"; // Import current user data
 
 interface TopBarProps {
   title: string;
@@ -17,17 +18,17 @@ export function TopBar({
   onRightActionClick,
 }: TopBarProps) {
   return (
-    <div className="h-14 backdrop-blur-md text-twitter-text-primary px-4 flex items-center justify-between sticky top-0 z-40 border-b border-twitter-divider bg-transparent">
+    <div className="h-14 backdrop-blur-md text-twitter-text-primary px-4 flex items-center justify-between sticky top-0 z-40 border-b border-twitter-divider">
       {/* SheetTrigger for mobile LeftMenu, hidden on desktop */}
       <SheetTrigger asChild className="md:hidden">
         <Button variant="ghost" size="icon" className="p-0 h-8 w-8" aria-label="Open menu">
           <Avatar className="h-8 w-8">
             <AvatarImage
-              src="https://placehold.co/48x48.png"
-              alt="User Avatar"
-              data-ai-hint="profile avatar"
+              src={currentUser.avatarUrl}
+              alt={currentUser.name}
+              data-ai-hint={currentUser.avatar_data_ai_hint || "profile avatar"}
             />
-            <AvatarFallback>U</AvatarFallback>
+            <AvatarFallback>{currentUser.name.substring(0,1).toUpperCase()}</AvatarFallback>
           </Avatar>
         </Button>
       </SheetTrigger>

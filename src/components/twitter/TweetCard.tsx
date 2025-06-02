@@ -59,7 +59,7 @@ const TweetCardComponent: React.FC<TweetCardProps> = ({ tweet }) => {
       passHref
       className="block hover:bg-slate-50/5 dark:hover:bg-slate-800/20 transition-colors duration-150"
     >
-      <div className="flex space-x-3 p-4 border-b border-twitter-divider font-system cursor-pointer bg-transparent">
+      <article className="flex space-x-3 p-4 border-b border-twitter-divider font-system cursor-pointer">
         <Avatar className="h-12 w-12 flex-shrink-0">
           <AvatarImage
             src={tweet.avatarUrl}
@@ -142,7 +142,7 @@ const TweetCardComponent: React.FC<TweetCardProps> = ({ tweet }) => {
             </Button>
           </div>
         </div>
-      </div>
+      </article>
     </Link>
   );
 };

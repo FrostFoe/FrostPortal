@@ -14,7 +14,6 @@ export default function MessagesPage() {
 
   return (
     <Sheet>
-      {" "}
       
       <div className="flex flex-col min-h-screen">
         <TopBar title="Messages" />
@@ -24,7 +23,7 @@ export default function MessagesPage() {
             <Input
               type="search"
               placeholder="Search Direct Messages"
-              className="pl-9 text-sm bg-slate-100 border-slate-200 focus:bg-white"
+              className="pl-9 text-sm border-twitter-divider focus:ring-twitter-primary focus:border-twitter-primary"
             />
           </div>
         </div>

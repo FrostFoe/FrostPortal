@@ -20,7 +20,7 @@ export function ReplyInputBar() {
         type="text"
         placeholder="Tweet your reply"
         aria-label="Tweet your reply"
-        className="flex-1 rounded-full border-transparent focus:border-twitter-primary focus:ring-twitter-primary placeholder-twitter-text-secondary text-sm h-10 px-4 bg-muted/50 dark:bg-muted/20"
+        className="flex-1 rounded-full border-transparent focus:border-twitter-primary focus:ring-twitter-primary placeholder-twitter-text-secondary text-sm h-10 px-4"
       />
     </div>
   );

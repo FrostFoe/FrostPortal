@@ -19,7 +19,7 @@ export function RightSidebar() {
           <Input
             type="search"
             placeholder="Search Twitter"
-            className="pl-10 pr-4 h-10 rounded-full border-transparent focus:border-twitter-primary focus:ring-twitter-primary placeholder-twitter-icon-gray text-sm w-full bg-muted/50 dark:bg-muted/20"
+            className="pl-10 pr-4 h-10 rounded-full border-transparent focus:border-twitter-primary focus:ring-twitter-primary placeholder-twitter-icon-gray text-sm w-full"
           />
         </div>
       </div>

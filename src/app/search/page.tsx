@@ -8,12 +8,12 @@ import { LeftMenu } from "@/components/twitter/LeftMenu";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search as SearchIcon, Settings, Plus } from "lucide-react";
+import type { Metadata } from "next";
 
 
 export default function SearchPage() {
   return (
     <Sheet>
-      {" "}
       
       <div className="flex flex-col min-h-screen bg-transparent">
         
@@ -32,7 +32,7 @@ export default function SearchPage() {
             <Input
               type="search"
               placeholder="Search Twitter"
-              className="pl-10 pr-10 h-10 rounded-full border-transparent focus:border-twitter-primary focus:ring-twitter-primary placeholder-twitter-icon-gray bg-muted/50 dark:bg-muted/20"
+              className="pl-10 pr-10 h-10 rounded-full border-transparent focus:border-twitter-primary focus:ring-twitter-primary placeholder-twitter-icon-gray"
             />
             <Settings className="absolute right-3 h-5 w-5 text-twitter-icon-gray" />
           </div>

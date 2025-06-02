@@ -1,7 +1,7 @@
-
 "use client";
 
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { TweetDetailTopBar } from "@/components/twitter/TweetDetailTopBar";
 import { DetailedTweetView, type DetailedTweetType } from "@/components/twitter/DetailedTweetView";
@@ -11,41 +11,67 @@ import { ReplyInputBar } from "@/components/twitter/ReplyInputBar";
 import { initialHomeTweets } from "@/contents/homeFeedData";
 import { mainTweetDetailData, repliesForTweetData as specificRepliesForMainTweet } from "@/contents/tweetDetailsData";
 
+type PageProps = {
+  params: Promise<{ id: string }>;
+};
+
 export default function TweetDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  let currentTweet: DetailedTweetType | null = null;
-  let currentReplies: ReplyType[] = [];
+  params
+}: PageProps) {
+  const [currentTweet, setCurrentTweet] = useState<DetailedTweetType | null>(null);
+  const [currentReplies, setCurrentReplies] = useState<ReplyType[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  if (params.id === mainTweetDetailData.id) {
-    currentTweet = mainTweetDetailData;
-    currentReplies = specificRepliesForMainTweet;
-  } else {
-    const foundHomeTweet = initialHomeTweets.find(tweet => tweet.id === params.id);
-    if (foundHomeTweet) {
-      currentTweet = {
-        id: foundHomeTweet.id,
-        user: {
-          name: foundHomeTweet.name,
-          handle: foundHomeTweet.handle,
-          avatarUrl: foundHomeTweet.avatarUrl,
-          avatar_data_ai_hint: foundHomeTweet.avatar_data_ai_hint,
-        },
-        content: foundHomeTweet.content,
-        detailedTimestamp: `Posted: ${foundHomeTweet.timestamp}`, 
-        source: "Frostter Web App",
-        retweetCount: foundHomeTweet.retweetCount,
-        likeCount: foundHomeTweet.likeCount,
-        imageAttachmentUrl: foundHomeTweet.imageAttachmentUrl,
-        image_data_ai_hint: foundHomeTweet.data_ai_hint,
-      };
-      
-    }
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      const awaitedParams = await params;
+      const tweetId = awaitedParams.id;
 
-  if (!currentTweet) {
+      let foundTweet: DetailedTweetType | null = null;
+      let foundReplies: ReplyType[] = [];
+
+      if (tweetId === mainTweetDetailData.id) {
+        foundTweet = mainTweetDetailData;
+        foundReplies = specificRepliesForMainTweet;
+      } else {
+        const foundHomeTweet = initialHomeTweets.find(tweet => tweet.id === tweetId);
+        if (foundHomeTweet) {
+          foundTweet = {
+            id: foundHomeTweet.id,
+            user: {
+              name: foundHomeTweet.name,
+              handle: foundHomeTweet.handle,
+              avatarUrl: foundHomeTweet.avatarUrl,
+              avatar_data_ai_hint: foundHomeTweet.avatar_data_ai_hint,
+            },
+            content: foundHomeTweet.content,
+            detailedTimestamp: `Posted: ${foundHomeTweet.timestamp}`,
+            source: "Frostter Web App",
+            retweetCount: foundHomeTweet.retweetCount,
+            likeCount: foundHomeTweet.likeCount,
+            imageAttachmentUrl: foundHomeTweet.imageAttachmentUrl,
+            image_data_ai_hint: foundHomeTweet.data_ai_hint,
+          };
+        }
+      }
+      setCurrentTweet(foundTweet);
+      setCurrentReplies(foundReplies);
+      setLoading(false);
+    };
+
+    fetchData();
+  }, [params]); // Rerun effect if params change
+
+  if (loading) {
+    return (
+      <div className="flex flex-col min-h-screen">
+        <TweetDetailTopBar />
+        <main className="flex-grow overflow-y-auto p-4 text-center flex flex-col items-center justify-center">
+          <p className="text-twitter-text-secondary">Loading tweet...</p>
+        </main>
+      </div>
+    );
+  } else if (!currentTweet) {
     return (
       <div className="flex flex-col min-h-screen">
         <TweetDetailTopBar />
@@ -85,7 +111,6 @@ export default function TweetDetailPage({
             No replies yet.
           </div>
         )}
-        
       </main>
 
       <ReplyInputBar />

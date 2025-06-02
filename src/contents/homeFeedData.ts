@@ -3,7 +3,7 @@ import type { Tweet } from "@/components/twitter/TweetCard";
 export const initialHomeTweets: Tweet[] = [
   {
     id: "tweet1",
-    avatarUrl: "https://placehold.co/48x48.png?text=PN",
+    avatarUrl: "https://placehold.co/48x48.png",
     avatar_data_ai_hint: "person smiling",
     name: "Placeholder Name",
     handle: "placeholderdev",
@@ -18,7 +18,7 @@ export const initialHomeTweets: Tweet[] = [
   },
   {
     id: "tweet2",
-    avatarUrl: "https://placehold.co/48x48.png?text=AI",
+    avatarUrl: "https://placehold.co/48x48.png",
     avatar_data_ai_hint: "robot head",
     name: "AI Enthusiast",
     handle: "futureisai",
@@ -32,7 +32,7 @@ export const initialHomeTweets: Tweet[] = [
   },
   {
     id: "tweet3",
-    avatarUrl: "https://placehold.co/48x48.png?text=JS",
+    avatarUrl: "https://placehold.co/48x48.png",
     avatar_data_ai_hint: "js logo",
     name: "JavaScript Fan",
     handle: "jslover",

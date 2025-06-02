@@ -3,7 +3,7 @@ import type { Tweet } from "@/components/twitter/TweetCard";
 export const userProfileData = {
   name: "Pixsellz",
   handle: "pixsellz",
-  avatarUrl: "https://placehold.co/80x80.png?text=P",
+  avatarUrl: "https://placehold.co/80x80.png",
   avatar_data_ai_hint: "company logo",
   bio: "Digital Goodies Team - Web & Mobile UI/UX development; Graphics; Illustrations",
   website: "pixsellz.io",
@@ -17,7 +17,7 @@ export const userProfileData = {
 export const profileTweetsData: Tweet[] = [
   {
     id: "profile_tweet1",
-    avatarUrl: "https://placehold.co/48x48.png?text=P",
+    avatarUrl: "https://placehold.co/48x48.png",
     avatar_data_ai_hint: "company logo",
     name: "Pixsellz",
     handle: "pixsellz",
@@ -32,7 +32,7 @@ export const profileTweetsData: Tweet[] = [
   },
   {
     id: "profile_tweet2",
-    avatarUrl: "https://placehold.co/48x48.png?text=KK",
+    avatarUrl: "https://placehold.co/48x48.png",
     avatar_data_ai_hint: "man profile",
     name: "Komol Kuchkarov",
     handle: "kkuchka...",

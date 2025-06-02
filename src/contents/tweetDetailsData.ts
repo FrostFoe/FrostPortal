@@ -7,7 +7,7 @@ export const mainTweetDetailData: DetailedTweetType = {
   user: {
     name: "karennne",
     handle: "karennne",
-    avatarUrl: "https://placehold.co/48x48.png?text=K",
+    avatarUrl: "https://placehold.co/48x48.png",
     avatar_data_ai_hint: "woman smiling",
   },
   content: "~~ hiring for a UX Lead in Sydney - who should I talk to?",
@@ -23,7 +23,7 @@ export const repliesForTweetData: ReplyType[] = [
     user: {
       name: "kiero_d",
       handle: "kiero_d",
-      avatarUrl: "https://placehold.co/48x48.png?text=KD",
+      avatarUrl: "https://placehold.co/48x48.png",
       avatar_data_ai_hint: "man portrait",
     },
     replyingTo: "@karennne",
@@ -39,7 +39,7 @@ export const repliesForTweetData: ReplyType[] = [
     user: {
       name: "karennne",
       handle: "karennne",
-      avatarUrl: "https://placehold.co/48x48.png?text=K",
+      avatarUrl: "https://placehold.co/48x48.png",
       avatar_data_ai_hint: "woman smiling",
     },
     replyingTo: "@kiero_d",

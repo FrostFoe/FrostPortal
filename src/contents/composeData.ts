@@ -33,7 +33,7 @@ export const mediaPreviewItemsData: MediaPreviewItem[] = [
 ];
 
 export const userComposeAvatar = {
-  src: "https://placehold.co/48x48.png?text=U",
+  src: "https://placehold.co/48x48.png",
   alt: "User Avatar",
   hint: "profile avatar",
 };

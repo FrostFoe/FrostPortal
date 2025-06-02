@@ -25,19 +25,19 @@ export const whoToFollowData = [
   {
     name: "Tech Innovator",
     handle: "techguru",
-    avatar: "https://placehold.co/48x48.png?text=TI",
+    avatar: "https://placehold.co/48x48.png",
     data_ai_hint: "man glasses",
   },
   {
     name: "Design Studio",
     handle: "creativedsgn",
-    avatar: "https://placehold.co/48x48.png?text=DS",
+    avatar: "https://placehold.co/48x48.png",
     data_ai_hint: "logo abstract",
   },
   {
     name: "Next.js News",
     handle: "nextjs",
-    avatar: "https://placehold.co/48x48.png?text=N",
+    avatar: "https://placehold.co/48x48.png",
     data_ai_hint: "logo letter",
   },
 ];

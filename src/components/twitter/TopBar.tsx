@@ -17,13 +17,13 @@ export function TopBar({
   onRightActionClick,
 }: TopBarProps) {
   return (
-    <div className="h-14 backdrop-blur-md text-twitter-text-primary px-4 flex items-center justify-between sticky top-0 z-40 border-b border-twitter-divider">
+    <div className="h-14 backdrop-blur-md text-twitter-text-primary px-4 flex items-center justify-between sticky top-0 z-40 border-b border-twitter-divider bg-transparent">
       {/* SheetTrigger for mobile LeftMenu, hidden on desktop */}
       <SheetTrigger asChild className="md:hidden">
-        <Button variant="ghost" size="icon" className="p-0 h-8 w-8">
+        <Button variant="ghost" size="icon" className="p-0 h-8 w-8" aria-label="Open menu">
           <Avatar className="h-8 w-8">
             <AvatarImage
-              src="https://placehold.co/48x48.png?text=U"
+              src="https://placehold.co/48x48.png"
               alt="User Avatar"
               data-ai-hint="profile avatar"
             />
@@ -48,6 +48,7 @@ export function TopBar({
           size="icon"
           onClick={onRightActionClick}
           className="p-0 h-8 w-8"
+          aria-label={title === "Notifications" || title === "Trends for you" ? "Open settings" : "Action"}
         >
           <RightActionIcon size={24} className="text-twitter-icon-gray" />
         </Button>

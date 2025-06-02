@@ -3,7 +3,7 @@ import type { NotificationItem } from "@/components/twitter/NotificationItemCard
 export const initialNotificationsData: NotificationItem[] = [
   {
     id: "1",
-    avatarUrl: "https://placehold.co/48x48.png?text=SD",
+    avatarUrl: "https://placehold.co/48x48.png",
     userName: "Saad Drusteer",
     isVerified: true,
     timestamp: "1h",
@@ -14,7 +14,7 @@ export const initialNotificationsData: NotificationItem[] = [
   },
   {
     id: "2",
-    avatarUrl: "https://placehold.co/48x48.png?text=AI",
+    avatarUrl: "https://placehold.co/48x48.png",
     userName: "AI News",
     timestamp: "2h",
     mainText:
@@ -24,7 +24,7 @@ export const initialNotificationsData: NotificationItem[] = [
   },
   {
     id: "3",
-    avatarUrl: "https://placehold.co/48x48.png?text=TW",
+    avatarUrl: "https://placehold.co/48x48.png",
     userName: "Twitter Team",
     isVerified: true,
     timestamp: "3h",

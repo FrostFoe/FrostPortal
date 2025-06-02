@@ -4,28 +4,28 @@
 import { Input } from "@/components/ui/input";
 import { Search as SearchIcon, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
-import { trendsData, whoToFollowData } from "@/contents/sidebarData"; // Import data
+import { trendsData, whoToFollowData } from "@/contents/sidebarData"; 
 
 export function RightSidebar() {
   return (
-    <div className="space-y-4 p-1">
+    <div className="space-y-4 p-1 bg-transparent">
       {/* Search Bar */}
-      <div className="sticky top-0 py-2 z-10">
+      <div className="sticky top-0 py-2 z-10 bg-transparent">
         <div className="relative flex items-center">
           <SearchIcon className="absolute left-3 h-5 w-5 text-twitter-icon-gray" />
           <Input
             type="search"
             placeholder="Search Twitter"
-            className="pl-10 pr-4 h-10 rounded-full border-transparent focus:border-twitter-primary focus:ring-twitter-primary placeholder-twitter-icon-gray text-sm w-full"
+            className="pl-10 pr-4 h-10 rounded-full border-transparent focus:border-twitter-primary focus:ring-twitter-primary placeholder-twitter-icon-gray text-sm w-full bg-muted/50 dark:bg-muted/20"
           />
         </div>
       </div>
 
       {/* Trends for you */}
-      <Card className="border-twitter-divider rounded-xl">
+      <Card className="border-twitter-divider rounded-xl bg-transparent">
         <CardHeader className="pb-2">
           <CardTitle className="text-xl font-bold text-twitter-text-primary flex justify-between items-center">
             Trends for you
@@ -33,6 +33,8 @@ export function RightSidebar() {
               variant="ghost"
               size="icon"
               className="h-8 w-8 text-twitter-primary"
+              aria-label="Trending settings"
+              onClick={() => { /* Placeholder for settings action */ }}
             >
               <Settings size={20} />
             </Button>
@@ -43,7 +45,7 @@ export function RightSidebar() {
             <Link
               href="#"
               key={index}
-              className="block p-3 rounded-lg"
+              className="block p-3 rounded-lg hover:bg-slate-50/5 dark:hover:bg-slate-800/30"
             >
               <p className="text-xs text-twitter-text-secondary">
                 {trend.category}
@@ -66,7 +68,7 @@ export function RightSidebar() {
       </Card>
 
       {/* Who to follow */}
-      <Card className="border-twitter-divider rounded-xl">
+      <Card className="border-twitter-divider rounded-xl bg-transparent">
         <CardHeader className="pb-2">
           <CardTitle className="text-xl font-bold text-twitter-text-primary">
             Who to follow
@@ -76,7 +78,7 @@ export function RightSidebar() {
           {whoToFollowData.map((user, index) => (
             <div
               key={index}
-              className="flex items-center justify-between p-3 rounded-lg"
+              className="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50/5 dark:hover:bg-slate-800/30"
             >
               <div className="flex items-center space-x-3">
                 <Avatar>
@@ -98,7 +100,7 @@ export function RightSidebar() {
               </div>
               <Button
                 variant="outline"
-                className="rounded-full text-sm font-bold border-twitter-text-primary text-twitter-text-primary px-4 py-1 h-8"
+                className="rounded-full text-sm font-bold border-twitter-text-primary text-twitter-text-primary px-4 py-1 h-8 bg-transparent hover:bg-twitter-primary/10"
               >
                 Follow
               </Button>

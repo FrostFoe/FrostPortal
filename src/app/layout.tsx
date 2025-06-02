@@ -12,8 +12,11 @@ import AnimatedSpaceBackground from "@/components/special/AnimatedSpaceBackgroun
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Frostter",
-  description: "A mobile Twitter UI clone, now responsive for desktop.",
+  title: {
+    template: "%s | Frostter",
+    default: "Frostter - A new social experience",
+  },
+  description: "Frostter: A modern, responsive social media interface built with Next.js.",
 };
 
 export default function RootLayout({
@@ -24,25 +27,25 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head></head>
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} antialiased bg-transparent`}>
         <ThemeProvider>
           <div className="min-h-screen relative">
             <AnimatedSpaceBackground />
             <div className="container mx-auto flex relative z-0">
               {/* Left Sidebar - Desktop */}
-              <aside className="hidden md:flex w-[275px] flex-shrink-0 border-r border-twitter-divider"> {/* Removed bg-twitter-background */}
+              <aside className="hidden md:flex w-[275px] flex-shrink-0 border-r border-twitter-divider bg-transparent">
                 <div className="fixed h-full w-[275px] overflow-y-auto p-3">
                   <LeftMenu />
                 </div>
               </aside>
 
               {/* Center Column (Main Content) */}
-              <main className="w-full md:max-w-[600px] min-h-screen border-r border-l border-twitter-divider"> {/* Removed bg-twitter-background */}
+              <main className="w-full md:max-w-[600px] min-h-screen border-r border-l border-twitter-divider bg-transparent">
                 {children}
               </main>
 
               {/* Right Sidebar - Desktop */}
-              <aside className="hidden lg:flex w-[350px] flex-shrink-0"> {/* Removed bg-twitter-background */}
+              <aside className="hidden lg:flex w-[350px] flex-shrink-0 bg-transparent">
                 <div className="fixed h-full w-[350px] overflow-y-auto p-3 border-l border-twitter-divider">
                   <RightSidebar />
                 </div>

@@ -17,7 +17,9 @@ https://youtu.be/1QGLHOaRLwM <br />
 Checkout My Personal blog: [DevDreaming](https://devdreaming.com/)<br />
 
 ---
->### NOTE: In the youtube tutorial I have used contentlayer for the markdown files. Since contentlayer is not actively maintained, I have switched to [Velite.js](https://velite.js.org/) for the markdown files. If you want to checkout the contentlayer please switch to the [contentlayer](https://github.com/codebucks27/Nextjs-tailwindcss-blog-template/tree/Contentlayer) branch.
+
+> ### NOTE: In the youtube tutorial I have used contentlayer for the markdown files. Since contentlayer is not actively maintained, I have switched to [Velite.js](https://velite.js.org/) for the markdown files. If you want to checkout the contentlayer please switch to the [contentlayer](https://github.com/codebucks27/Nextjs-tailwindcss-blog-template/tree/Contentlayer) branch.
+
 ---
 
 ### ⭐DO NOT FORGET TO STAR THIS REPO⭐
@@ -25,15 +27,18 @@ Checkout My Personal blog: [DevDreaming](https://devdreaming.com/)<br />
 ### Images of The Portfolio Website:
 
 #### Home
+
 ![Nextjs Personal Blog Website](https://github.com/codebucks27/Nextjs-contentlayer-blog/blob/main/project%20images/Home-Big.png?raw=true)
 
 #### About
+
 ![Nextjs Personal Blog Website About Page](https://github.com/codebucks27/Nextjs-contentlayer-blog/blob/main/project%20images/About-Big.png?raw=true)
 
 #### Contact
+
 ![Next.js Personal Blog Website Contact Page](https://github.com/codebucks27/Nextjs-contentlayer-blog/blob/main/project%20images/Cotnact-Big.png?raw=true)
 
-For more Images please check the [project images](https://github.com/codebucks27/Nextjs-contentlayer-blog/tree/main/project%20images) folder from this repo or check the demo link. 
+For more Images please check the [project images](https://github.com/codebucks27/Nextjs-contentlayer-blog/tree/main/project%20images) folder from this repo or check the demo link.
 
 ### Resources Used in This Project
 
@@ -43,6 +48,7 @@ For more Images please check the [project images](https://github.com/codebucks27
 - Icons from https://iconify.design/ <br />
 
 ### All the images used in the blogs:
+
 - Photo by <a href="https://unsplash.com/@kmuza?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Carlos Muza</a> on <a href="https://unsplash.com/photos/hpjSkU2UYSU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 - Photo by <a href="https://unsplash.com/@marvelous?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Marvin Meyer</a> on <a href="https://unsplash.com/photos/SYTO3xs06fU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 - Photo by <a href="https://unsplash.com/@pinjasaur?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Paul Esch-Laurent</a> on <a href="https://unsplash.com/photos/oZMUrWFHOB4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -55,6 +61,4 @@ For more Images please check the [project images](https://github.com/codebucks27
 - Photo by <a href="https://unsplash.com/@emilep?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Emile Perron</a> on <a href="https://unsplash.com/photos/xrVDYZRGdw4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 - Photo by <a href="https://unsplash.com/@synkevych?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Roman Synkevych</a> on <a href="https://unsplash.com/photos/vXInUOv1n84?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-

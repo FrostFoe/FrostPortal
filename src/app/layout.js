@@ -1,28 +1,24 @@
 import "./globals.css";
 import { cx } from "@/src/utils";
-import { Inter, Manrope } from "next/font/google";
+import { Anek_Bangla } from "next/font/google";
 import Header from "@/src/components/Header";
 import Footer from "../components/Footer";
 import siteMetadata from "../utils/siteMetaData";
 import Script from "next/script";
 
-const inter = Inter({
+// Load Anek Bangla font using next/font/google
+const anekBangla = Anek_Bangla({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-in",
-});
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-mr",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-anek", // CSS variable for Tailwind use
 });
 
 export const metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
   title: {
     template: `%s | ${siteMetadata.title}`,
-    default: siteMetadata.title, // a default is required when creating a template
+    default: siteMetadata.title,
   },
   description: siteMetadata.description,
   openGraph: {
@@ -56,19 +52,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={cx(
-          inter.variable,
-          manrope.variable,
-          "font-mr bg-light dark:bg-dark",
-        )}
-      >
+      <body className={cx(anekBangla.variable, "font-anek bg-light dark:bg-dark")}>
         <Script id="theme-switcher" strategy="beforeInteractive">
           {`if (localStorage.getItem('theme') === 'dark' || !('theme' in localStorage)) {
-    document.documentElement.classList.add('dark')
-} else {
-    document.documentElement.classList.remove('dark')
-  }`}
+            document.documentElement.classList.add('dark')
+          } else {
+            document.documentElement.classList.remove('dark')
+          }`}
         </Script>
         <Header />
         {children}

@@ -16,8 +16,7 @@ module.exports = {
         gray: "#747474",
       },
       fontFamily: {
-        mr: ["var(--font-mr)"],
-        in: ["var(--font-in)"],
+        anek: ['var(--font-anek)'],
       },
       animation: {
         roll: "roll 24s linear infinite",

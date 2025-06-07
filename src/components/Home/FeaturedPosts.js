@@ -1,19 +1,19 @@
-import { sortBlogs } from "@/src/utils";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BlogLayoutOne from "../Blog/BlogLayoutOne";
 import BlogLayoutTwo from "../Blog/BlogLayoutTwo";
 
 const FeaturedPosts = ({ blogs }) => {
-  const sortedBlogs = sortBlogs(blogs);
+  const [featuredBlogs, setFeaturedBlogs] = useState([]);
 
   // Function to get random unique blogs
   const getRandomBlogs = (arr, num) => {
-    const shuffled = arr.sort(() => 0.5 - Math.random());
+    const shuffled = [...arr].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, num);
   };
 
-  const featuredBlogs = getRandomBlogs(sortedBlogs, 3);
-  const [featuredBlogOne, featuredBlogTwo, featuredBlogThree] = featuredBlogs;
+  useEffect(() => {
+    setFeaturedBlogs(getRandomBlogs(blogs, 3));
+  }, [blogs]);
 
   return (
     <section className="w-full mt-16 sm:mt-24  md:mt-32 px-5 sm:px-10 md:px-24  sxl:px-32 flex flex-col items-center justify-center">

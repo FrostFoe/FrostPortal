@@ -3,12 +3,18 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Tag from "../Elements/Tag";
-import { slug } from "github-slugger";
+import { slug } from "github-slugger"
+import { useState, useEffect } from 'react';
 
 const HomeCoverSection = ({ blogs }) => {
-  const sortedBlogs = sortBlogs(blogs);
-  const blog = sortedBlogs[0];
+  const [randomBlog, setRandomBlog] = useState(null);
 
+  useEffect(() => {
+    if (blogs && blogs.length > 0) {
+      const randomIndex = Math.floor(Math.random() * blogs.length);
+      setRandomBlog(blogs[randomIndex]);
+    }
+  }, [blogs]);
   return (
     <div className="w-full inline-block">
       <article className="flex flex-col items-start justify-end mx-5 sm:mx-10 relative h-[60vh] sm:h-[85vh]">

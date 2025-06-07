@@ -5,7 +5,7 @@ import Link from "next/link";
 import React from "react";
 import Tag from "../Elements/Tag";
 import { slug } from "github-slugger";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const HomeCoverSection = ({ blogs }) => {
   const [randomBlog, setRandomBlog] = useState(null);
@@ -42,7 +42,10 @@ const HomeCoverSection = ({ blogs }) => {
         />
 
         <div className="w-full lg:w-3/4 p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col items-start justify-center z-0 text-light">
-          <Tag link={`/categories/${slug(randomBlog.tags[0])}`} name={randomBlog.tags[0]} />
+          <Tag
+            link={`/categories/${slug(randomBlog.tags[0])}`}
+            name={randomBlog.tags[0]}
+          />
           <Link href={randomBlog.url} className="mt-6">
             <h1 className="font-bold capitalize text-lg sm:text-xl md:text-3xl lg:text-4xl">
               <span

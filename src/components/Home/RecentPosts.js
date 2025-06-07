@@ -36,7 +36,10 @@ const RecentPosts = ({ blogs = [] }) => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-16 mt-16">
           {[...Array(6)].map((_, index) => (
-            <div key={index} className="col-span-1 row-span-1 relative h-64 bg-gray-200 dark:bg-gray-700 animate-pulse rounded-lg" />
+            <div
+              key={index}
+              className="col-span-1 row-span-1 relative h-64 bg-gray-200 dark:bg-gray-700 animate-pulse rounded-lg"
+            />
           ))}
         </div>
       </section>
@@ -59,7 +62,10 @@ const RecentPosts = ({ blogs = [] }) => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-16 mt-16">
         {randomBlogs.map((blog) => (
-          <article key={blog._id || blog.id || blog.slug} className="col-span-1 row-span-1 relative">
+          <article
+            key={blog._id || blog.id || blog.slug}
+            className="col-span-1 row-span-1 relative"
+          >
             <BlogLayoutThree blog={blog} />
           </article>
         ))}

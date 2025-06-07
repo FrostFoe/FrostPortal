@@ -2,7 +2,6 @@
 module.exports = {
   // othor next config here...
   compiler: {
-    allowedDevOrigins: ["https://frostfoe.netlify.app/"],
     removeConsole: process.env.NODE_ENV === "production" ? true : false,
   },
   webpack: (config) => {
